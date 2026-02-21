@@ -2,41 +2,50 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Ecosystem from "./pages/Ecosystem";
-import Solutions from "./pages/Solutions";
-import Leadership from "./pages/Leadership";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import klaunLoaderLogo from "@/assets/klaun-loader-logo.png";
+import { useEffect, useState } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/ecosystem" element={<Ecosystem />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/leadership" element={<Leadership />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-        <WhatsAppButton />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        {isLoading ? (
+          <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white text-foreground">
+            <img
+              src={klaunLoaderLogo}
+              alt="Klaun logo"
+              className="w-40 h-40 object-contain"
+            />
+            <p className="mt-2 text-lg font-heading font-semibold tracking-wide">Klaun</p>
+            <p className="mt-1 text-sm font-medium tracking-wide">Loading</p>
+          </div>
+        ) : (
+          <BrowserRouter>
+            <Header />
+            <Index />
+            <Footer />
+            <WhatsAppButton />
+          </BrowserRouter>
+        )}
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

@@ -102,11 +102,11 @@
   }
 
   .philosophy-strip {
-    @apply bg-secondary text-secondary-foreground py-6 text-center text-lg md:text-xl tracking-[0.3em] font-heading font-semibold uppercase;
+    @apply bg-secondary text-primary py-6 text-center text-lg md:text-xl tracking-[0.3em] font-heading font-semibold uppercase;
   }
 
   .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-[hsl(var(--hero-overlay)/0.65)] to-[hsl(var(--hero-overlay)/0.85)];
+    @apply absolute inset-0 bg-gradient-to-b from-[hsl(var(--hero-overlay)/0.25)] to-[hsl(var(--hero-overlay)/0.45)];
   }
 
   .card-hover {
@@ -124,6 +124,179 @@
   51%, 100% { opacity: 0; }
 }
 
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 1s ease;
+}
+
+/* Hero responsive typography - typewriter text */
+.hero-title {
+  font-size: 1.375rem;
+  min-height: auto;
+}
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+    min-height: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 4.25rem;
+    min-height: 100px;
+  }
+}
+
+/* Hero button shine effect */
+.btn-hero-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-hero-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.6s ease;
+}
+.btn-hero-shine:hover::after {
+  left: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
+
+/* Footer geometric pattern - subtle diamonds/squares */
+.footer-pattern {
+  background-color: hsl(var(--secondary));
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.035) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.035) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Leadership section - gradient header with pattern */
+.leadership-header {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.92) 45%, hsl(var(--secondary)) 100%);
+  position: relative;
+}
+.leadership-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  pointer-events: none;
+}
+
+/* Engagement Model - pattern on dark background */
+.engagement-model-section {
+  background-color: hsl(var(--secondary));
+  position: relative;
+}
+.engagement-model-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+  pointer-events: none;
+}
+
+/* About section - subtle dotted wave */
+.about-dot-wave {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, hsl(var(--primary) / 0.2) 2px, transparent 2.1px),
+    radial-gradient(circle, hsl(var(--primary) / 0.16) 1px, transparent 1.1px),
+    radial-gradient(circle, hsl(var(--primary) / 0.12) 1.6px, transparent 1.7px);
+  background-size: 28px 28px, 36px 36px, 22px 22px;
+  background-position: 20px 50px, 120px 80px, 60px 140px;
+  mask-image: radial-gradient(circle at 20% 35%, rgba(0,0,0,0.9), transparent 65%);
+}
+
+/* Why Klaun Exists - subtle dotted background */
+.why-klaun-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, hsl(var(--primary) / 0.12) 1.5px, transparent 1.6px),
+    radial-gradient(circle, hsl(var(--primary) / 0.08) 1px, transparent 1.1px);
+  background-size: 24px 24px, 32px 32px;
+  background-position: 10px 20px, 90px 140px;
+  opacity: 0.5;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: translateZ(0) rotate(0deg);
+  }
+  to {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.ring-red {
+  filter: hue-rotate(-120deg) saturate(3) brightness(0.95) contrast(1.35);
+}
+
+.wave-red {
+  filter: hue-rotate(-140deg) saturate(2.8) brightness(0.75) contrast(1.35);
+}
+
+/* Vision & Mission section background */
+.vision-mission-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, hsl(var(--primary) / 0.14) 1.5px, transparent 1.6px),
+    radial-gradient(circle, hsl(var(--primary) / 0.1) 1px, transparent 1.1px);
+  background-size: 26px 26px, 34px 34px;
+  background-position: 30px 40px, 120px 110px;
+  mask-image: radial-gradient(circle at 50% 30%, rgba(0,0,0,0.8), transparent 65%);
+}
+

@@ -1,60 +1,101 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Linkedin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import klaunLogo from "@/assets/klaun-logo.png";
+import linkedinIcon from "@/assets/linkedin-icon.png";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Ecosystem", path: "/ecosystem" },
-  { label: "Solutions", path: "/solutions" },
-  { label: "Leadership", path: "/leadership" },
-  { label: "Contact", path: "/contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Leadership", href: "#leadership" },
+  { label: "Contact", href: "#contact" },
 ];
+
+const SCROLL_THRESHOLD = 50;
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
+      const sections = navLinks.map((l) => l.href.slice(1));
+      const scrollPos = window.scrollY + 150;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(`#${sections[i]}`);
+          break;
+        }
+      }
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const showSolidNav = isScrolled;
+
+  const scrollTo = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-6">
-        <Link to="/" className="font-heading text-2xl font-bold tracking-tight text-foreground">
-          KLAUN
-        </Link>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        showSolidNav ? "bg-white shadow-sm border-b border-border" : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="container mx-auto flex items-center justify-between h-14 lg:h-16 px-4 sm:px-6">
+        <button onClick={() => scrollTo("#home")} className="shrink-0 flex items-center hover:opacity-90 transition-opacity">
+          <img
+            src={klaunLogo}
+            alt="KLAUN"
+            className={`h-20 lg:h-24 w-auto object-contain transition-all duration-300 ${showSolidNav ? "" : "brightness-0 invert"}`}
+          />
+        </button>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-6 shrink min-w-0">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                location.pathname === link.path ? "text-primary" : "text-muted-foreground"
+            <button
+              key={link.href}
+              onClick={() => scrollTo(link.href)}
+              className={`text-sm xl:text-base font-medium transition-colors duration-200 whitespace-nowrap shrink-0 ${
+                activeSection === link.href ? "text-primary" : showSolidNav ? "text-muted-foreground hover:text-primary" : "text-white/90 hover:text-white"
               }`}
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-            <Linkedin className="w-5 h-5" />
+        <div className="hidden lg:flex items-center gap-2 xl:gap-4 shrink-0">
+          <a
+            href="https://www.linkedin.com/showcase/klaun/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 flex items-center hover:opacity-80 transition-opacity"
+          >
+            <img src={linkedinIcon} alt="LinkedIn" className="h-6 w-6 xl:h-7 xl:w-7 object-contain" />
           </a>
-          <Link to="/contact">
-            <Button variant="cta" size="sm">Get Started</Button>
-          </Link>
+          <button onClick={() => scrollTo("#contact")} className="shrink-0">
+            <Button variant="cta" size="sm" className={`text-xs xl:text-sm px-3 xl:px-4 ${showSolidNav ? "" : "bg-white text-secondary hover:bg-white/90"}`}>
+              Get Started
+            </Button>
+          </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button className="lg:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
+        <button className={`lg:hidden transition-colors ${showSolidNav ? "text-foreground" : "text-white"}`} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -65,20 +106,19 @@ const Header = () => {
           >
             <nav className="flex flex-col gap-1 p-6">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`py-3 text-sm font-medium transition-colors border-b border-border ${
-                    location.pathname === link.path ? "text-primary" : "text-muted-foreground"
-                  }`}
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className={`py-3 text-sm font-medium text-left transition-colors border-b border-border ${activeSection === link.href ? "text-primary" : "text-muted-foreground"}`}
                 >
                   {link.label}
-                </Link>
+                </button>
               ))}
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-4">
-                <Button variant="cta" className="w-full">Get Started</Button>
-              </Link>
+              <button onClick={() => scrollTo("#contact")} className="mt-4">
+                <Button variant="cta" className="w-full">
+                  Get Started
+                </Button>
+              </button>
             </nav>
           </motion.div>
         )}

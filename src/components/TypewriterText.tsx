@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const titles = [
-  "Engineering Growth Ecosystems for the Next Market Era",
+  "Engineering Growth Ecosystems for the Next Market Era.",
   "Strategic Growth Infrastructure. Verified & Scalable.",
   "AI-Driven Intelligence for Sustainable Brand Growth.",
   "Ecosystems that Scale Brands. Trust Verified.",
@@ -23,20 +23,20 @@ const TypewriterText = () => {
         }
         return prev + 1;
       });
-    }, 80);
+    }, 120);
 
     const change = setTimeout(() => {
       setIndex((prev) => (prev + 1) % titles.length);
-    }, 7000);
+    }, 9000);
 
     return () => {
       clearInterval(typing);
       clearTimeout(change);
     };
-  }, [index, fullText.length]);
+  }, [index]);
 
   return (
-    <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight max-w-5xl mx-auto">
+    <h1 key={index} className="hero-title font-heading font-bold text-primary-foreground leading-tight max-w-5xl mx-auto animate-reveal flex items-center justify-center text-center">
       {fullText.slice(0, charIndex)}
       <span className="typewriter-cursor" />
     </h1>
