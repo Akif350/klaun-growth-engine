@@ -175,10 +175,15 @@ const Index = () => {
   const [activeForm, setActiveForm] = useState<FormType>("enterprise");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [engagementModelHovered, setEngagementModelHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [leadershipHovered, setLeadershipHovered] = useState(false);
   const [stats, setStats] = useState({ projects: 0, team: 0 });
   const statsRef = useRef<HTMLDivElement | null>(null);
+  const engagementRef = useRef<HTMLDivElement | null>(null);
+  const leadershipRef = useRef<HTMLDivElement | null>(null);
   const statsInView = useInView(statsRef, { amount: 0.35 });
+  const engagementInView = useInView(engagementRef, { amount: 0.2, once: true });
+  const leadershipInView = useInView(leadershipRef, { amount: 0.2, once: true });
 
   useEffect(() => {
     let rafId = 0;
@@ -208,6 +213,26 @@ const Index = () => {
 
     return () => cancelAnimationFrame(rafId);
   }, [statsInView]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const legacyMediaQuery = mediaQuery as MediaQueryList & {
+      addListener?: (listener: () => void) => void;
+      removeListener?: (listener: () => void) => void;
+    };
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+    updateIsMobile();
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updateIsMobile);
+      return () => mediaQuery.removeEventListener("change", updateIsMobile);
+    }
+    if (legacyMediaQuery.addListener) {
+      legacyMediaQuery.addListener(updateIsMobile);
+      return () => legacyMediaQuery.removeListener?.(updateIsMobile);
+    }
+    return () => undefined;
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -683,10 +708,14 @@ const Index = () => {
       {/* Engagement Model */}
       <section
         className="section-padding engagement-model-section text-secondary-foreground relative overflow-hidden cursor-default"
-        onMouseEnter={() => setEngagementModelHovered(true)}
-        onMouseLeave={() => setEngagementModelHovered(false)}
+        onMouseEnter={() => {
+          if (!isMobile) setEngagementModelHovered(true);
+        }}
+        onMouseLeave={() => {
+          if (!isMobile) setEngagementModelHovered(false);
+        }}
       >
-        <div className="container mx-auto relative z-10">
+        <div ref={engagementRef} className="container mx-auto relative z-10">
           <AnimatedSection>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-16">Engagement Model</h2>
           </AnimatedSection>
@@ -695,8 +724,8 @@ const Index = () => {
               <motion.div
                 key={step.step}
                 initial={{ opacity: 0, x: i < 2 ? -80 : 80 }}
-                animate={engagementModelHovered ? { opacity: 1, x: 0 } : { opacity: 0, x: i < 2 ? -80 : 80 }}
-                transition={{ duration: 0.5, delay: engagementModelHovered ? i * 0.1 : 0, ease: "easeOut" }}
+                animate={engagementInView || engagementModelHovered || isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: i < 2 ? -80 : 80 }}
+                transition={{ duration: 0.5, delay: engagementInView || engagementModelHovered || isMobile ? i * 0.1 : 0, ease: "easeOut" }}
                 whileHover={{ scale: 1.03, y: -4, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3)" }}
                 className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 text-center transition-colors duration-300 hover:bg-white/10 hover:border-primary/40"
               >
@@ -718,7 +747,7 @@ const Index = () => {
         onMouseEnter={() => setLeadershipHovered(true)}
         onMouseLeave={() => setLeadershipHovered(false)}
       >
-        <div className="leadership-header pt-16 pb-24 lg:pb-32 px-6 text-center relative">
+        <div ref={leadershipRef} className="leadership-header pt-16 pb-24 lg:pb-32 px-6 text-center relative">
           <span className="inline-block px-4 py-1.5 rounded-md bg-secondary/90 text-secondary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-6">
             Leadership
           </span>
@@ -737,8 +766,8 @@ const Index = () => {
               <motion.div
                 key={leader.name}
                 initial={{ opacity: 0, y: 50, scale: 0.92 }}
-                animate={leadershipHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.92 }}
-                transition={{ duration: 0.6, delay: leadershipHovered ? i * 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
+                animate={leadershipInView || leadershipHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.92 }}
+                transition={{ duration: 0.6, delay: leadershipInView || leadershipHovered ? i * 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="bg-white rounded-2xl shadow-xl shadow-black/10 border border-border p-6 flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 hover:border-primary/30">
                   <div className="flex-shrink-0 flex justify-center mb-4">
@@ -782,8 +811,8 @@ const Index = () => {
                 <motion.div
                   key={mentor.name}
                   initial={{ opacity: 0, y: 30, scale: 0.96 }}
-                  animate={leadershipHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.96 }}
-                  transition={{ duration: 0.5, delay: leadershipHovered ? i * 0.12 : 0, ease: [0.22, 1, 0.36, 1] }}
+                  animate={leadershipInView || leadershipHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.96 }}
+                  transition={{ duration: 0.5, delay: leadershipInView || leadershipHovered ? i * 0.12 : 0, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className="bg-white rounded-2xl border border-border p-5 shadow-md shadow-black/5 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30">
                     <div className="flex items-center gap-4">
