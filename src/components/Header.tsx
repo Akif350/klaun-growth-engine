@@ -85,7 +85,7 @@ const Header = () => {
             <img src={linkedinIcon} alt="LinkedIn" className="h-6 w-6 xl:h-7 xl:w-7 object-contain" />
           </a>
           <button onClick={() => scrollTo("#contact")} className="shrink-0">
-            <Button variant="cta" size="sm" className={`text-xs xl:text-sm px-3 xl:px-4 ${showSolidNav ? "" : "bg-white text-secondary hover:bg-white/90"}`}>
+            <Button variant="cta" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
               Get Started
             </Button>
           </button>

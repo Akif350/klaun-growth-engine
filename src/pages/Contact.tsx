@@ -10,11 +10,11 @@ type FormType = "enterprise" | "partnership" | "startup";
 const formTitles: Record<FormType, string> = {
   enterprise: "Enterprise Growth Enquiry",
   partnership: "Strategic Partnership Enquiry",
-  startup: "Startup Ecosystem Onboarding",
+  startup:    "Startup Ecosystem Onboarding",
 };
 
 const Contact = () => {
-  const [activeForm, setActiveForm] = useState<FormType>("enterprise");
+  const [activeForm, setActiveForm]   = useState<FormType>("enterprise");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -32,22 +32,26 @@ const Contact = () => {
 
   return (
     <main className="pt-16">
+
+      {/* Hero */}
       <section className="section-padding bg-secondary text-secondary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-secondary-foreground/70 text-lg max-w-2xl mx-auto">
+            <p className="text-secondary-foreground/70 text-lg max-w-[42ch] mx-auto">
               Ready to build your growth ecosystem? Choose your enquiry type below.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
+      {/* Form */}
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-2xl">
           <AnimatedSection>
-            {/* Form Type Selector */}
-            <div className="flex flex-wrap gap-2 mb-10 justify-center">
+
+            {/* Enquiry type tabs */}
+            <div className="flex flex-wrap gap-3 mb-12 justify-center">
               {(Object.keys(formTitles) as FormType[]).map((type) => (
                 <button
                   key={type}
@@ -63,7 +67,9 @@ const Contact = () => {
               ))}
             </div>
 
-            <h2 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">{formTitles[activeForm]}</h2>
+            <h2 className="font-heading text-2xl font-bold text-foreground mb-10 text-center">
+              {formTitles[activeForm]}
+            </h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
@@ -75,14 +81,26 @@ const Contact = () => {
               {activeForm === "startup" && (
                 <Input placeholder="Stage (Pre-seed / Seed / Series A)" className="h-12" />
               )}
-              <Textarea placeholder="Tell us about your growth challenges..." rows={5} required />
-              <Button type="submit" variant="cta" size="lg" className="w-full py-6 text-base" disabled={isSubmitting}>
+              <Textarea
+                placeholder="Tell us about your growth challenges..."
+                rows={5}
+                required
+              />
+              <Button
+                type="submit"
+                variant="cta"
+                size="lg"
+                className="w-full py-6 text-base"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Submitting..." : "Submit Enquiry"}
               </Button>
             </form>
+
           </AnimatedSection>
         </div>
       </section>
+
     </main>
   );
 };
