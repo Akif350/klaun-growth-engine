@@ -375,8 +375,7 @@ const Index = () => {
                 </div>
 
                 <h2 className="font-heading text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.5rem] font-black text-foreground mb-6 leading-[1.05]">
-                  Klaun is Not<br />an Agency.{" "}
-                  <span className="text-primary">Klaun is<br />Growth Infrastructure.</span>
+                  Klaun is Not<br />an Agency. <span className="text-primary">Klaun is Growth Infrastructure.</span>
                 </h2>
 
                 <div className="h-[3px] w-14 bg-primary rounded-full mb-7" />
