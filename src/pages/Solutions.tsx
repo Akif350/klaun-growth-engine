@@ -35,7 +35,7 @@ const Solutions = () => {
   return (
     <main className="pt-16">
 
-      {/* Hero */}
+      {}
       <section className="section-padding bg-secondary text-secondary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
@@ -47,7 +47,7 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* Solution Cards */}
+      {}
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-5xl grid gap-8 lg:gap-10">
           {solutions.map((sol, i) => (
@@ -64,7 +64,7 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {}
       <section className="section-padding bg-primary text-primary-foreground text-center">
         <AnimatedSection>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Let's Architect Your Growth</h2>

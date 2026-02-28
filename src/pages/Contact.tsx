@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <main className="pt-16">
 
-      {/* Hero */}
+      {}
       <section className="section-padding bg-secondary text-secondary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
@@ -45,12 +45,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Form */}
+      {}
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-2xl">
           <AnimatedSection>
 
-            {/* Enquiry type tabs */}
+            {}
             <div className="flex flex-wrap gap-3 mb-12 justify-center">
               {(Object.keys(formTitles) as FormType[]).map((type) => (
                 <button

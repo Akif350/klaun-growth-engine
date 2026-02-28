@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const fullText = "Global Growth Intelligence & Verified Ecosystem Infrastructure";
-const TYPING_DURATION_MS = 9500; // slightly snappier
+const TYPING_DURATION_MS = 9500; 
 const charInterval = TYPING_DURATION_MS / fullText.length;
 
 const TypewriterText = () => {

@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden footer-pattern text-secondary-foreground">
 
-      {/* ── Deep layered background atmosphere ── */}
+      {}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 -left-32 w-[600px] h-[500px] rounded-full bg-primary/10 blur-[140px]" />
         <div className="absolute top-20 left-1/3 w-[300px] h-[200px] rounded-full bg-primary/8 blur-[80px]" />
@@ -43,16 +43,14 @@ const Footer = () => {
         />
       </div>
 
-      {/* ── Top red gradient rule ── */}
+      {}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
 
-      {/* ════════════════════════════════════
-          HERO IDENTITY ROW
-      ════════════════════════════════════ */}
+      {}
       <div className="relative z-10 container mx-auto px-6 lg:px-14 pt-16 pb-12 border-b border-white/[0.07]">
         <div className="flex flex-col lg:flex-row lg:items-end gap-10 lg:justify-between">
 
-          {/* LEFT — Brand wordmark + description */}
+          {}
           <div className="max-w-xl">
             <div className="flex items-center gap-3 mb-6">
               <div className="relative w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-xl shadow-primary/40 shrink-0">
@@ -72,7 +70,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* RIGHT — Stats + CTA */}
+          {}
           <div className="flex items-stretch gap-0 shrink-0">
             <div className="px-8 py-5 border border-white/8 rounded-l-2xl bg-white/[0.03] text-center">
               <p className="font-heading text-4xl font-black text-white leading-none mb-1">
@@ -100,13 +98,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ════════════════════════════════════
-          4-COLUMN LINKS
-      ════════════════════════════════════ */}
+      {}
       <div className="relative z-10 container mx-auto px-6 lg:px-14 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1.3fr] gap-10 lg:gap-8">
 
-          {/* Solutions */}
+          {}
           <div>
             <div className="flex items-center gap-2.5 mb-7">
               <div className="w-6 h-6 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
@@ -124,7 +120,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Industries */}
+          {}
           <div>
             <div className="flex items-center gap-2.5 mb-7">
               <div className="w-6 h-6 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
@@ -147,7 +143,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Navigate */}
+          {}
           <div>
             <div className="flex items-center gap-2.5 mb-7">
               <div className="w-6 h-6 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
@@ -172,7 +168,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Get in Touch */}
+          {}
           <div>
             <div className="flex items-center gap-2.5 mb-7">
               <div className="w-6 h-6 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
@@ -182,7 +178,7 @@ const Footer = () => {
             </div>
 
             <div className="space-y-3 mb-7">
-              {/* Email card */}
+              {}
               <a
                 href="mailto:partners@klaun.com"
                 className="group relative flex items-center gap-3.5 p-4 rounded-2xl border border-white/8 bg-white/[0.03] hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 overflow-hidden"
@@ -198,7 +194,7 @@ const Footer = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 text-primary opacity-0 group-hover:opacity-100 ml-auto shrink-0 transition-all duration-300" />
               </a>
 
-              {/* Location card */}
+              {}
               <div className="flex items-start gap-3.5 p-4 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center shrink-0">
                   <MapPin className="w-4 h-4 text-primary/70" />
@@ -216,7 +212,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Socials */}
+            {}
             <div>
               <p className="text-[9px] text-white/20 uppercase tracking-[0.25em] font-black mb-3">Follow Us</p>
               <div className="flex gap-2.5">
@@ -243,9 +239,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ════════════════════════════════════
-          COPYRIGHT STRIP
-      ════════════════════════════════════ */}
+      {}
       <div className="relative z-10 border-t border-white/[0.07]">
         <div className="h-px bg-gradient-to-r from-primary/40 via-primary/15 to-transparent" />
         <div className="container mx-auto px-6 lg:px-14 py-5">

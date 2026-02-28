@@ -7,8 +7,7 @@ import contactImage from "@/assets/contact-image.png";
 import aveshSharmaImage from "@/assets/avesh-sharma.png";
 import premBhimavaramImage from "@/assets/prem-bhimavaram.png";
 import ashwaniChauhanImage from "@/assets/ashwani-chauhan.png";
-import aboutRobotImage from "@/assets/about-top-new.png";
-import aboutBottomImage from "@/assets/about-bottom-new.png";
+import aboutRightImage from "@/assets/about-right-team.png";
 import whyKlaunBanner from "@/assets/why-klaun-banner.png";
 import visionCardImage from "@/assets/vision-card.png";
 import missionCardImage from "@/assets/mission-card.png";
@@ -32,6 +31,14 @@ import assocXiaomi from "@/assets/assoc-xiaomi.png";
 import assocMarsh from "@/assets/assoc-marsh.png";
 import assocStartupLab from "@/assets/assoc-startuplab.png";
 import assocTremis from "@/assets/assoc-tremis.png";
+import realmeLogo from "@/assets/realme-logo.png";
+import intexLogo from "@/assets/intex-logo.png";
+import spiceDigitalLogo from "@/assets/spice-digital-logo.png";
+import superfanStudioLogo from "@/assets/superfan-studio-logo.png";
+import superfanAiLogo from "@/assets/superfan-ai-logo.png";
+import enterprisePartnershipNetwork from "@/assets/enterprise-partnership-network.png";
+import experientialMediaPlatforms from "@/assets/experiential-media-platforms.png";
+import consumerTechnologyEcosystems from "@/assets/consumer-technology-ecosystems.png";
 import {
   ArrowRight,
   BarChart3,
@@ -57,7 +64,6 @@ import { toast } from "@/hooks/use-toast";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-/* ─── Static data ───────────────────────────────────────────── */
 
 const heroMarqueeItems = [
   { icon: Rocket, label: "Consumer tech brands" },
@@ -130,25 +136,25 @@ const ecosystemSections = [
 ];
 
 const solutions = [
-  { icon: Layers,    title: "Brand Foundation",            desc: "Strategy, positioning, and market architecture." },
-  { icon: Network,   title: "Strategic Partnership Canvas", desc: "Influencer systems and content ecosystems." },
-  { icon: Zap,       title: "Platform Integration",         desc: "Multi-channel execution and optimization." },
-  { icon: BarChart3, title: "Performance Intelligence",     desc: "Attribution, analytics, and decision systems." },
-  { icon: Shield,    title: "Revenue Sustainability",       desc: "LTV optimization and retention loops." },
+  { icon: Layers,   title: "Brand Foundation",             desc: "Strategy, positioning, and market architecture." },
+  { icon: Network,  title: "Strategic Partnership Canvas",  desc: "Influencer systems and content ecosystems." },
+  { icon: Zap,      title: "Platform Integration",          desc: "Multi-channel execution and optimization." },
+  { icon: BarChart3,title: "Performance Intelligence",      desc: "Attribution, analytics, and decision systems." },
+  { icon: Shield,   title: "Revenue Sustainability",        desc: "LTV optimization and retention loops." },
 ];
 
 const workWith = [
-  { icon: Rocket,     label: "Consumer tech brands",               image: consumerTechImage },
-  { icon: TrendingUp, label: "Startups scaling globally",          image: startupsGlobalImage },
-  { icon: Target,     label: "Platforms needing performance scale", image: performanceScaleImage },
-  { icon: Users,      label: "Creator economy ecosystems",         image: creatorEconomyImage },
+  { icon: Rocket,     label: "Consumer tech brands",                image: consumerTechImage },
+  { icon: TrendingUp, label: "Startups scaling globally",           image: startupsGlobalImage },
+  { icon: Target,     label: "Platforms needing performance scale",  image: performanceScaleImage },
+  { icon: Users,      label: "Creator economy ecosystems",          image: creatorEconomyImage },
 ];
 
 const impactOutcomes = [
-  { step: "01", icon: Layers,      title: "Unified Growth Architecture",      desc: "Single ecosystem blueprint." },
-  { step: "02", icon: ShieldCheck, title: "Fraud-Resistant Acquisition",      desc: "Verified, quality traffic." },
-  { step: "03", icon: Target,      title: "Verified Attribution Intelligence", desc: "Full-funnel transparency." },
-  { step: "04", icon: TrendingUp,  title: "Lifecycle Revenue Compounding",    desc: "Sustainable growth loops." },
+  { step: "01", icon: Layers,     title: "Unified Growth Architecture",      desc: "Single ecosystem blueprint." },
+  { step: "02", icon: ShieldCheck,title: "Fraud-Resistant Acquisition",      desc: "Verified, quality traffic." },
+  { step: "03", icon: Target,     title: "Verified Attribution Intelligence", desc: "Full-funnel transparency." },
+  { step: "04", icon: TrendingUp, title: "Lifecycle Revenue Compounding",    desc: "Sustainable growth loops." },
 ];
 
 const dnaPrinciples = [
@@ -187,23 +193,26 @@ const dnaPrinciples = [
 const leaders = [
   {
     name: "Avesh Sharma",
-    role: "Founder & Chief Ecosystem Officer",
-    bio: "Strategic partnerships and global brand activation across experiential ecosystems. Associated with Xiaomi, Marsh, and experiential media platforms.",
-    tags: "Strategic Alliances | Enterprise Partnerships | Experiential Growth",
+    role: "Founder & Chief Ecosystem Officer | 20+ Years",
+    association:
+      "Over two decades of experience across consumer technology ecosystems, experiential marketing infrastructure, and strategic alliance-led growth programs ? with leadership exposure across Xiaomi, realme, Intex, Spice Digital, Marsh, Superfan Studio / Superfan.AI, and multiple consumer-internet ecosystems. His work spans AR / VR / XR platforms, large-scale brand activation systems, and enterprise partnership corridors across India and emerging growth markets.",
+    tags: "Strategic Alliances | Experiential Growth Ecosystems | Consumer Technology Partnerships | Market Expansion Architecture | Brand Activation Infrastructure",
     image: aveshSharmaImage,
   },
   {
     name: "Prem Bhimavaram",
-    role: "Director, Growth Intelligence & Performance Infrastructure",
-    bio: "Performance acquisition across gaming, fintech, ecommerce, travel, and education — specializing in CPI/CPA/CPS frameworks and revenue optimization.",
-    tags: "Performance Infrastructure | Acquisition Intelligence | Growth Engineering",
+    role: "Director ? Growth Intelligence & Performance Infrastructure",
+    association:
+      "Leads Klaun's Growth Intelligence and Performance Acquisition Infrastructure, with experience across global performance ecosystems spanning gaming, fintech, ecommerce, travel, education, and digital platform growth sectors ? designing CPI / CPA / CPS acquisition frameworks, affiliate ecosystem infrastructure, revenue intelligence systems, and cross-channel performance optimization architectures.",
+    tags: "Performance Growth Architecture | Acquisition Intelligence | Revenue Optimization | Affiliate Ecosystem Strategy | Growth Intelligence Systems",
     image: premBhimavaramImage,
   },
   {
     name: "Ashwani Chauhan",
-    role: "Director, Product & Martech Systems",
-    bio: "Product innovation across growth technology frameworks, performance infrastructure, and scalable ecosystem architectures.",
-    tags: "Product Innovation | Ecosystem Technology | Growth Frameworks",
+    role: "Director ? Product Innovation & Martech Systems",
+    association:
+      "Contributes leadership across growth technology integration, product innovation frameworks, and Martech ecosystem architecture ? enabling scalable tracking systems, performance intelligence platforms, and technology-driven ecosystem product integration designed to support enterprise-scale growth infrastructure.",
+    tags: "Martech Systems | Growth Technology Platforms | Product Innovation | Performance Intelligence Infrastructure",
     image: ashwaniChauhanImage,
   },
 ];
@@ -211,14 +220,16 @@ const leaders = [
 const mentors = [
   {
     name: "Vineet Singh",
-    role: "Strategic Brand & Growth Advisor",
-    desc: "Advising enterprise growth ecosystems, digital transformation, and scalable brand expansion across digital-first organizations.",
+    role: "Strategic Brand & Growth Advisor | 25+ Years Experience",
+    desc: "A veteran industry leader with 25+ years of experience, guiding enterprise organizations, digital platforms, and high-growth companies across brand transformation, strategic media expansion, enterprise marketing ecosystems, and long-term growth positioning frameworks.",
+    tags: "Enterprise Brand Strategy | Media Ecosystem Growth | Market Expansion Consulting | Growth Transformation Programs",
     image: mentorVineetImage,
   },
   {
     name: "Vivek Jhorar",
-    role: "Strategic Partnerships & Investment Ecosystem Advisor",
-    desc: "Expertise in institutional partnerships, investment ecosystems, and alliance-driven expansion frameworks supporting enterprise growth corridors.",
+    role: "Strategic Partnerships & Expansion Advisor | IIM Indore | ex-Walmart",
+    desc: "Brings extensive expertise in institutional partnerships, enterprise alliance strategy, and cross-market growth enablement ? with leadership exposure across international retail and enterprise partnership ecosystems including Walmart, strengthening Klaun's ability to build scalable alliance-driven expansion corridors.",
+    tags: "Institutional Partnerships | Global Alliance Ecosystems | Market Expansion Strategy | Enterprise Collaboration Frameworks",
     image: mentorVivekImage,
   },
 ];
@@ -230,7 +241,6 @@ const formTitles: Record<FormType, string> = {
   startup:    "Startup Ecosystem Onboarding",
 };
 
-/* ─── Component ─────────────────────────────────────────────── */
 
 const Index = () => {
   const [activeForm, setActiveForm] = useState<FormType>("enterprise");
@@ -238,43 +248,14 @@ const Index = () => {
   const [engagementModelHovered, setEngagementModelHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [leadershipHovered, setLeadershipHovered] = useState(false);
-  const [stats, setStats] = useState({ projects: 0, team: 0 });
-  const statsRef      = useRef<HTMLDivElement | null>(null);
+  const [expandedLeader, setExpandedLeader] = useState<string | null>(null);
+  const [expandedMentor, setExpandedMentor] = useState<string | null>(null);
   const engagementRef = useRef<HTMLDivElement | null>(null);
   const leadershipRef = useRef<HTMLDivElement | null>(null);
-  const statsInView      = useInView(statsRef,      { amount: 0.35 });
   const engagementInView = useInView(engagementRef, { amount: 0.2, once: true });
   const leadershipInView = useInView(leadershipRef, { amount: 0.2, once: true });
 
-  /* counter animation */
-  useEffect(() => {
-    let rafId = 0;
-    const durationMs = 900;
-    const targets = { projects: 500, team: 50 };
-
-    const animate = (startTime: number) => {
-      const tick = (now: number) => {
-        const progress = Math.min((now - startTime) / durationMs, 1);
-        setStats({
-          projects: Math.floor(targets.projects * progress),
-          team:     Math.floor(targets.team     * progress),
-        });
-        if (progress < 1) rafId = requestAnimationFrame(tick);
-      };
-      rafId = requestAnimationFrame(tick);
-    };
-
-    if (statsInView) {
-      setStats({ projects: 0, team: 0 });
-      animate(performance.now());
-    } else {
-      setStats({ projects: 0, team: 0 });
-    }
-    return () => cancelAnimationFrame(rafId);
-  }, [statsInView]);
-
-  /* mobile detection */
-  useEffect(() => {
+    useEffect(() => {
     if (typeof window === "undefined") return;
     const mq = window.matchMedia("(max-width: 768px)");
     const update = () => setIsMobile(mq.matches);
@@ -283,8 +264,7 @@ const Index = () => {
     return () => mq.removeEventListener("change", update);
   }, []);
 
-  /* form submit */
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     const form     = e.currentTarget;
@@ -328,7 +308,7 @@ const Index = () => {
   return (
     <main>
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
+      {}
       <section id="home" className="relative min-h-screen flex flex-col overflow-hidden">
         <img
           src={heroBanner}
@@ -341,7 +321,7 @@ const Index = () => {
           <div className="text-center w-full">
             <TypewriterText />
             <p className="mt-6 sm:mt-8 text-primary-foreground text-sm sm:text-base md:text-lg lg:text-xl max-w-[52ch] mx-auto font-medium leading-relaxed">
-              We design unified growth systems connecting Brand → Creator → Platform → Performance → Revenue.
+              We design unified growth systems connecting Brand ? Creator ? Platform ? Performance ? Revenue.
             </p>
             <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={() => scrollTo("contact")} className="btn-hero-shine inline-flex">
@@ -359,7 +339,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* bottom marquee */}
+        {}
         <div className="relative z-10 absolute bottom-0 left-0 right-0 w-full py-4 bg-[hsl(var(--hero-overlay)/0.3)] backdrop-blur-sm">
           <Marquee speed={40} pauseOnHover gradient={false}>
             {[...heroMarqueeItems, ...heroMarqueeItems].map((item, i) => (
@@ -375,91 +355,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── PHILOSOPHY STRIP ─────────────────────────────────── */}
-      <div className="philosophy-strip">Solve → Serve → Scale → Smile</div>
+      {}
+      <div className="philosophy-strip">Solve ? Serve ? Scale ? Smile</div>
 
-      {/* ── WHAT IS KLAUN ────────────────────────────────────── */}
-      <section id="about" className="section-padding bg-background scroll-mt-20 relative overflow-hidden">
-        <div className="about-dot-wave" />
-        <div className="container mx-auto max-w-[1400px] w-full px-6 md:px-12 lg:px-20 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-20 items-center">
+      {}
+      <section id="about" className="scroll-mt-20 relative overflow-hidden bg-background">
+        {}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #d8d8d8 1.2px, transparent 1.2px)", backgroundSize: "24px 24px", opacity: 0.55 }} />
 
+        <div className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+
+            {}
             <AnimatedSection>
-              <div className="inline-flex items-center gap-2 bg-primary/8 text-primary text-xs uppercase tracking-widest font-bold px-4 py-1.5 rounded-full mb-7 border border-primary/20">
-                About Klaun
+              <div className="flex flex-col justify-center h-full px-8 sm:px-14 lg:px-20 xl:px-24 py-20 lg:py-28">
+
+                <div className="text-[10px] uppercase tracking-[0.28em] font-black text-foreground/40 border-b border-foreground/15 pb-2 mb-8 w-fit">
+                  About Klaun
+                </div>
+
+                <h2 className="font-heading text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.5rem] font-black text-foreground mb-6 leading-[1.05]">
+                  Klaun is Not<br />an Agency.{" "}
+                  <span className="text-primary">Klaun is<br />Growth Infrastructure.</span>
+                </h2>
+
+                <div className="h-[3px] w-14 bg-primary rounded-full mb-7" />
+
+                <p className="text-foreground/60 text-base md:text-lg leading-relaxed mb-10 max-w-[42ch]">
+                  We unify intelligence, alliances, performance systems, and revenue architecture into one scalable growth ecosystem.
+                </p>
+
+                <button onClick={() => scrollTo("contact")} className="w-fit">
+                  <Button variant="default" size="lg" className="text-sm px-9 py-5 rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-shadow duration-300">
+                    Get in Touch
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </button>
+
               </div>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-[1.15]">
-                Klaun is Not an Agency.{" "}
-                <span className="text-primary">Klaun is Growth Infrastructure.</span>
-              </h2>
-              <p className="text-foreground/70 text-base md:text-lg leading-relaxed mb-10 max-w-[44ch]">
-                We unify intelligence, alliances, performance systems, and revenue architecture into one scalable growth ecosystem.
-              </p>
-              <ul className="space-y-3 mb-10">
-                {[
-                  "Verified ecosystem — no fragmented models",
-                  "Intelligence-first, not assumption-driven",
-                  "Built for lifecycle revenue compounding",
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm text-foreground/75">
-                    <span className="w-5 h-5 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
-                    </span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <button onClick={() => scrollTo("contact")}>
-                <Button variant="default" size="lg" className="text-sm px-8 py-4 rounded-full">
-                  Get in Touch
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </button>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.12}>
-              <div className="grid grid-cols-[1.1fr_1fr] grid-rows-[auto_auto] gap-4 lg:gap-5">
-                <div className="row-span-2 relative rounded-2xl overflow-hidden shadow-lg border border-border/40 bg-muted">
-                  <img
-                    src={aboutRobotImage}
-                    alt="Klaun growth intelligence"
-                    className="w-full h-full object-cover object-center min-h-[340px] lg:min-h-[420px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
-                  <button
-                    type="button"
-                    className="absolute bottom-5 left-5 w-11 h-11 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:scale-105 transition-transform"
-                    aria-label="Play"
-                  >
-                    <span className="ml-0.5 text-sm">▶</span>
-                  </button>
-                </div>
-
-                <div className="relative rounded-2xl overflow-hidden shadow-md border border-border/40 bg-muted h-[175px] lg:h-[200px]">
-                  <img
-                    src={aboutBottomImage}
-                    alt="Strategic planning session"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-bold px-2.5 py-1 rounded-full border border-primary/20 shadow-sm">
-                    Klaun
-                  </span>
-                </div>
-
-                <div
-                  ref={statsRef}
-                  className="rounded-2xl bg-secondary text-secondary-foreground border border-secondary shadow-md p-5 flex flex-col justify-center gap-4 h-[175px] lg:h-[200px]"
-                >
-                  <div>
-                    <p className="text-4xl font-heading font-bold text-primary leading-none">{stats.projects}+</p>
-                    <p className="text-xs text-secondary-foreground/70 mt-1 uppercase tracking-wider">Completed Work</p>
-                  </div>
-                  <div className="h-px bg-secondary-foreground/15 w-full" />
-                  <div>
-                    <p className="text-4xl font-heading font-bold text-primary leading-none">{stats.team}+</p>
-                    <p className="text-xs text-secondary-foreground/70 mt-1 uppercase tracking-wider">Experienced Team</p>
-                  </div>
-                </div>
+            {}
+            <AnimatedSection delay={0.15}>
+              <div className="relative h-[480px] lg:h-full lg:min-h-[680px] overflow-hidden">
+                <img
+                  src={aboutRightImage}
+                  alt="Team collaboration at Klaun"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
               </div>
             </AnimatedSection>
 
@@ -467,8 +410,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── WHY KLAUN EXISTS ─────────────────────────────────── */}
+            {}
       <section className="relative overflow-hidden bg-secondary py-24 lg:py-32">
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{
@@ -477,13 +421,17 @@ const Index = () => {
             backgroundSize: "48px 48px",
           }}
         />
+        {}
         <div className="absolute -top-32 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
+        {}
         <div className="absolute -bottom-32 left-0 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-[1400px] relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
+            {}
             <AnimatedSection>
+              {}
               <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-8 border border-primary/25">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
                 Why Klaun Exists
@@ -496,10 +444,12 @@ const Index = () => {
                 We Fixed It.
               </h2>
 
+              {}
               <div className="space-y-4 mb-10">
+                {}
                 <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
-                    <span className="text-primary text-lg font-bold leading-none">✕</span>
+                    <span className="text-primary text-lg font-bold leading-none">?</span>
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">The Problem</p>
@@ -508,19 +458,21 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
+                {}
                 <div className="rounded-xl border border-primary/30 bg-primary/10 backdrop-blur-sm p-5 flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-lg bg-primary/30 border border-primary/40 flex items-center justify-center shrink-0">
-                    <span className="text-primary text-lg font-bold leading-none">✓</span>
+                    <span className="text-primary text-lg font-bold leading-none">?</span>
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">The Klaun Solution</p>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      A verified layer connecting brands, platforms, creators, and performance — with full accountability.
+                      A verified layer connecting brands, platforms, creators, and performance ? with full accountability.
                     </p>
                   </div>
                 </div>
               </div>
 
+              {}
               <div className="flex flex-wrap items-center gap-2">
                 {["Brand", "Creator", "Platform", "Performance", "Revenue"].map((step, i, arr) => (
                   <div key={step} className="flex items-center gap-2">
@@ -528,34 +480,44 @@ const Index = () => {
                       {step}
                     </span>
                     {i < arr.length - 1 && (
-                      <span className="text-primary text-xs font-bold">→</span>
+                      <span className="text-primary text-xs font-bold">?</span>
                     )}
                   </div>
                 ))}
               </div>
             </AnimatedSection>
 
+            {}
             <AnimatedSection delay={0.15}>
               <div className="relative flex items-center justify-center">
+                {}
                 <img
                   src={robotCircle}
                   alt=""
                   aria-hidden="true"
                   className="absolute w-[340px] sm:w-[400px] lg:w-[460px] opacity-70 spin-slow ring-red pointer-events-none"
                 />
+
+                {}
                 <img
                   src={whyKlaunRobot}
                   alt="Klaun AI assistant"
                   className="relative z-10 max-h-[400px] lg:max-h-[460px] w-auto object-contain drop-shadow-2xl"
                 />
+
+                {}
                 <div className="absolute top-6 left-0 sm:left-4 z-20 bg-white rounded-xl shadow-lg border border-border px-4 py-2.5 flex items-center gap-2.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-foreground text-xs font-bold whitespace-nowrap">Verified Ecosystem</span>
                 </div>
+
+                {}
                 <div className="absolute bottom-10 right-0 sm:right-4 z-20 bg-secondary border border-primary/30 rounded-xl shadow-lg px-4 py-2.5 flex items-center gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
                   <span className="text-white text-xs font-bold whitespace-nowrap">Fraud-Free Traffic</span>
                 </div>
+
+                {}
                 <div className="absolute bottom-28 left-0 sm:-left-2 z-20 bg-primary rounded-xl shadow-lg px-4 py-2.5">
                   <span className="text-white text-xs font-bold whitespace-nowrap">500+ Brands Served</span>
                 </div>
@@ -566,8 +528,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── VISION & MISSION ─────────────────────────────────── */}
+      {}
       <section className="section-padding bg-background relative overflow-hidden">
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.045]"
           style={{
@@ -576,6 +539,8 @@ const Index = () => {
           }}
         />
         <div className="container mx-auto max-w-5xl relative z-10">
+
+          {}
           <AnimatedSection>
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 bg-primary/8 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-5 border border-primary/20">
@@ -589,47 +554,66 @@ const Index = () => {
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+
+            {}
             <AnimatedSection>
               <div className="group relative rounded-2xl overflow-hidden border border-border bg-secondary h-full min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/15 hover:border-primary/40 cursor-default">
+                {}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-br-full pointer-events-none" />
                 <div className="absolute top-0 left-0 w-16 h-16 bg-primary/20 rounded-br-full pointer-events-none" />
+
+                {}
                 <span className="absolute bottom-4 right-6 text-[8rem] font-heading font-black text-white/[0.04] leading-none select-none pointer-events-none">V</span>
+
                 <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
+                  {}
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-primary/30">
                       <Compass className="w-5 h-5 text-white" />
                     </div>
                     <span className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-primary">Vision</span>
                   </div>
+
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-secondary-foreground mb-4 leading-snug">
                     The World's Most Trusted Growth Infrastructure
                   </h3>
                   <p className="text-secondary-foreground/65 text-sm leading-relaxed flex-1">
-                    Where every brand, creator, and platform scales through verified, intelligent systems — with zero guesswork.
+                    Where every brand, creator, and platform scales through verified, intelligent systems ? with zero guesswork.
                   </p>
+
+                  {}
                   <div className="mt-8 h-0.5 w-12 bg-primary rounded-full group-hover:w-24 transition-all duration-500" />
                 </div>
               </div>
             </AnimatedSection>
 
+            {}
             <AnimatedSection delay={0.15}>
               <div className="group relative rounded-2xl overflow-hidden border border-primary/25 bg-primary h-full min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/25 cursor-default">
+                {}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full pointer-events-none" />
                 <div className="absolute top-0 right-0 w-16 h-16 bg-white/15 rounded-bl-full pointer-events-none" />
+
+                {}
                 <span className="absolute bottom-4 left-6 text-[8rem] font-heading font-black text-white/[0.08] leading-none select-none pointer-events-none">M</span>
+
                 <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
+                  {}
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-11 h-11 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center shrink-0">
                       <Map className="w-5 h-5 text-white" />
                     </div>
                     <span className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-white/80">Mission</span>
                   </div>
+
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-4 leading-snug">
-                    Solve → Serve → Scale → Smile
+                    Solve ? Serve ? Scale ? Smile
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed flex-1">
-                    Diagnose, architect, activate, and compound sustainable revenue for every partner — from first signal to lifecycle growth.
+                    Diagnose, architect, activate, and compound sustainable revenue for every partner ? from first signal to lifecycle growth.
                   </p>
+
+                  {}
                   <div className="mt-8 flex flex-wrap gap-2">
                     {["Diagnose", "Architect", "Activate", "Compound"].map((s) => (
                       <span key={s} className="px-3 py-1 rounded-lg bg-white/15 border border-white/20 text-white text-xs font-semibold">
@@ -640,12 +624,14 @@ const Index = () => {
                 </div>
               </div>
             </AnimatedSection>
+
           </div>
         </div>
       </section>
 
-      {/* ── DNA OF KLAUN ─────────────────────────────────────── */}
+      {}
       <section className="section-padding bg-white relative overflow-hidden">
+        {}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -654,7 +640,9 @@ const Index = () => {
             opacity: 0.55,
           }}
         />
+        {}
         <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
+        {}
         <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
         <div className="container mx-auto max-w-4xl relative z-10">
           <AnimatedSection>
@@ -668,19 +656,21 @@ const Index = () => {
 
           <div className="space-y-6">
             {[
-              { icon: Building2,   title: "Customisable Ecosystem",      desc: "Building permanent systems, not temporary solutions.",      variant: "red"  },
-              { icon: Brain,       title: "Intelligence Over Assumption", desc: "Data-driven decisions replacing guesswork.",                variant: "dark" },
-              { icon: ShieldCheck, title: "Verification Over Vanity",     desc: "Real metrics that drive sustainable outcomes.",             variant: "red"  },
-              { icon: Network,     title: "Alliances Over Isolation",     desc: "Connected ecosystems generating compounding value.",        variant: "dark" },
-              { icon: Infinity,    title: "Lifecycle Accountability",     desc: "End-to-end ownership from acquisition to revenue.",         variant: "red"  },
+              { icon: Building2,  title: "Customisable Ecosystem",      desc: "Building permanent systems, not temporary solutions.",               variant: "red"   },
+              { icon: Brain,      title: "Intelligence Over Assumption", desc: "Data-driven decisions replacing guesswork.",                         variant: "dark"  },
+              { icon: ShieldCheck,title: "Verification Over Vanity",     desc: "Real metrics that drive sustainable outcomes.",                      variant: "red"   },
+              { icon: Network,    title: "Alliances Over Isolation",     desc: "Connected ecosystems generating compounding value.",                 variant: "dark"  },
+              { icon: Infinity,   title: "Lifecycle Accountability",     desc: "End-to-end ownership from acquisition to revenue.",                  variant: "red"   },
             ].map((principle, i) => {
-              const isRed     = principle.variant === "red";
-              const gradFrom  = isRed ? "hsl(0,84%,50%)"  : "hsl(0,0%,12%)";
-              const gradTo    = isRed ? "hsl(0,84%,38%)"  : "hsl(0,0%,6%)";
-              const iconColor = isRed ? "hsl(0,84%,50%)"  : "hsl(0,0%,10%)";
+              const isRed  = principle.variant === "red";
+              const gradFrom = isRed ? "hsl(0,84%,50%)"  : "hsl(0,0%,12%)";
+              const gradTo   = isRed ? "hsl(0,84%,38%)"  : "hsl(0,0%,6%)";
+              const iconColor = isRed ? "hsl(0,84%,50%)" : "hsl(0,0%,10%)";
               return (
                 <AnimatedSection key={principle.title} delay={i * 0.08}>
                   <div className={`flex items-center gap-6 sm:gap-8 group rounded-2xl border px-6 sm:px-8 py-5 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 ${isRed ? "border-primary/20 hover:border-primary/45 hover:shadow-primary/10" : "border-border/70 hover:border-foreground/20"}`}>
+
+                    {}
                     <div className="relative flex-shrink-0 w-[68px] h-[76px] sm:w-[80px] sm:h-[90px]">
                       <svg viewBox="0 0 80 92" className="absolute inset-0 w-full h-full" fill="none">
                         <defs>
@@ -689,7 +679,12 @@ const Index = () => {
                             <stop offset="100%" stopColor={gradTo} />
                           </linearGradient>
                         </defs>
-                        <path d="M4,4 L56,4 L76,46 L56,88 L4,88 Z" stroke={`url(#cg-${i})`} strokeWidth="2.5" fill="white" />
+                        <path
+                          d="M4,4 L56,4 L76,46 L56,88 L4,88 Z"
+                          stroke={`url(#cg-${i})`}
+                          strokeWidth="2.5"
+                          fill="white"
+                        />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center pr-3">
                         <principle.icon
@@ -698,10 +693,15 @@ const Index = () => {
                         />
                       </div>
                     </div>
+
+                    {}
                     <div className="flex-1">
-                      <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-1.5">{principle.title}</h3>
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-1.5">
+                        {principle.title}
+                      </h3>
                       <p className="text-foreground/55 text-sm sm:text-base leading-relaxed">{principle.desc}</p>
                     </div>
+
                   </div>
                 </AnimatedSection>
               );
@@ -710,24 +710,49 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── ECOSYSTEM ARCHITECTURE ───────────────────────────── */}
+      {}
       <section id="ecosystem" className="bg-secondary scroll-mt-20 section-padding relative overflow-hidden">
+        {}
         <div
           aria-hidden="true"
           className="pointer-events-none select-none absolute left-0 top-0 w-[260px] sm:w-[320px] md:w-[380px] h-[180px] sm:h-[220px] md:h-[260px] opacity-15 bg-primary"
-          style={{ maskImage: `url(${topLeftWave})`, WebkitMaskImage: `url(${topLeftWave})`, maskRepeat: "no-repeat", WebkitMaskRepeat: "no-repeat", maskSize: "contain", WebkitMaskSize: "contain", maskPosition: "left top", WebkitMaskPosition: "left top" }}
+          style={{
+            maskImage: `url(${topLeftWave})`,
+            WebkitMaskImage: `url(${topLeftWave})`,
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "left top",
+            WebkitMaskPosition: "left top",
+          }}
         />
         <div
           aria-hidden="true"
           className="pointer-events-none select-none absolute right-0 top-0 w-[260px] sm:w-[320px] md:w-[380px] h-[180px] sm:h-[220px] md:h-[260px] opacity-15 bg-primary scale-x-[-1]"
-          style={{ maskImage: `url(${topLeftWave})`, WebkitMaskImage: `url(${topLeftWave})`, maskRepeat: "no-repeat", WebkitMaskRepeat: "no-repeat", maskSize: "contain", WebkitMaskSize: "contain", maskPosition: "left top", WebkitMaskPosition: "left top" }}
+          style={{
+            maskImage: `url(${topLeftWave})`,
+            WebkitMaskImage: `url(${topLeftWave})`,
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "left top",
+            WebkitMaskPosition: "left top",
+          }}
         />
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.035]"
-          style={{ backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "48px 48px" }}
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
         />
 
         <div className="container mx-auto relative z-10 px-6 md:px-12 lg:px-20">
+          {}
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-5 border border-primary/25">
@@ -745,15 +770,29 @@ const Index = () => {
             {ecosystemLayers.map((layer, i) => (
               <AnimatedSection key={layer.title} delay={i * 0.1}>
                 <div className="group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-7 h-full flex flex-col transition-all duration-300 hover:bg-white/10 hover:border-primary/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-primary/10 overflow-hidden cursor-default">
+
+                  {}
                   <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {}
                   <div className="absolute top-5 right-5 w-7 h-7 rounded-full bg-primary/15 border border-primary/25 flex items-center justify-center">
                     <span className="text-primary text-xs font-bold leading-none">0{i + 1}</span>
                   </div>
+
+                  {}
                   <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center mb-5 transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/30">
                     <layer.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-5 pr-8 leading-snug">{layer.title}</h3>
+
+                  {}
+                  <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-5 pr-8 leading-snug">
+                    {layer.title}
+                  </h3>
+
+                  {}
                   <div className="h-px bg-white/10 mb-5 group-hover:bg-primary/30 transition-colors duration-300" />
+
+                  {}
                   <ul className="space-y-3 flex-1">
                     {layer.items.map((item) => (
                       <li key={item} className="text-sm text-white/60 flex items-start gap-3 group-hover:text-white/75 transition-colors duration-200">
@@ -762,6 +801,7 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
+
                 </div>
               </AnimatedSection>
             ))}
@@ -769,13 +809,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── ECOSYSTEM INFRASTRUCTURE SYSTEMS ─────────────────── */}
+      {}
       <section className="bg-muted section-padding relative overflow-hidden">
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.5]"
-          style={{ backgroundImage: "radial-gradient(circle, #d1d5db 1px, transparent 1px)", backgroundSize: "24px 24px" }}
+          style={{
+            backgroundImage: "radial-gradient(circle, #d1d5db 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
         />
         <div className="container mx-auto max-w-[1400px] relative z-10">
+
+          {}
           <AnimatedSection>
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 bg-primary/8 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-5 border border-primary/20">
@@ -789,42 +835,63 @@ const Index = () => {
             </div>
           </AnimatedSection>
 
+          {}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {ecosystemSections.slice(0, 3).map((section, i) => (
               <AnimatedSection key={section.title} delay={i * 0.1}>
                 <div className="group bg-white rounded-2xl border border-border/50 shadow-sm overflow-hidden h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30">
+
+                  {}
                   <div className="relative h-48 overflow-hidden bg-secondary">
                     {section.image && (
-                      <img src={section.image} alt={section.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     )}
+                    {}
                     <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent" />
+                    {}
                     <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/40">
                       <section.icon className="w-5 h-5 text-white" />
                     </div>
+                    {}
                     <span className="absolute top-3 right-3 rounded-full bg-white text-primary text-[10px] font-bold px-2.5 py-1 shadow-md border border-primary/20 tracking-wide">
                       {section.tag}
                     </span>
                   </div>
+
+                  {}
                   <div className="p-6">
+                    {}
                     <div className="flex items-start gap-3 mb-3">
                       <div className="w-0.5 h-6 bg-primary rounded-full shrink-0 mt-0.5" />
                       <h3 className="font-heading text-base font-bold text-foreground leading-snug">{section.title}</h3>
                     </div>
                     <p className="text-sm text-foreground/60 leading-relaxed pl-3.5">{section.desc}</p>
                   </div>
+
                 </div>
               </AnimatedSection>
             ))}
           </div>
 
+          {}
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
             {ecosystemSections.slice(3).map((section, i) => (
               <AnimatedSection key={section.title} delay={(i + 3) * 0.1}>
                 <div className="group bg-white rounded-2xl border border-border/50 shadow-sm overflow-hidden h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30">
+
                   <div className="flex flex-col sm:flex-row h-full">
+                    {}
                     <div className="relative sm:w-52 lg:w-64 h-48 sm:h-auto overflow-hidden bg-secondary shrink-0">
                       {section.image && (
-                        <img src={section.image} alt={section.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <img
+                          src={section.image}
+                          alt={section.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-secondary/40 sm:bg-gradient-to-b sm:from-transparent sm:to-secondary/60" />
                       <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/40">
@@ -834,6 +901,8 @@ const Index = () => {
                         {section.tag}
                       </span>
                     </div>
+
+                    {}
                     <div className="flex-1 p-6 flex flex-col justify-center">
                       <div className="flex items-start gap-3 mb-3">
                         <div className="w-0.5 h-6 bg-primary rounded-full shrink-0 mt-0.5" />
@@ -842,95 +911,168 @@ const Index = () => {
                       <p className="text-sm text-foreground/60 leading-relaxed pl-3.5">{section.desc}</p>
                     </div>
                   </div>
+
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* ── SOLUTIONS ────────────────────────────────────────── */}
+      {}
       <section id="solutions" className="bg-background scroll-mt-20 section-padding relative overflow-hidden">
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.045]"
-          style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1.5px, transparent 1.6px)", backgroundSize: "28px 28px" }}
+          style={{
+            backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1.5px, transparent 1.6px)",
+            backgroundSize: "28px 28px",
+          }}
         />
         <div className="container mx-auto max-w-[1400px] relative z-10">
+
+          {}
           <AnimatedSection>
             <div className="relative rounded-2xl overflow-hidden mb-12 w-full min-h-[200px] sm:min-h-[240px]">
-              <img src={growthSolutionsBanner} alt="Growth solutions" className="absolute inset-0 w-full h-full object-cover" />
+              <img
+                src={growthSolutionsBanner}
+                alt="Growth solutions"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {}
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/75 to-primary/40" />
+              {}
               <div
                 className="absolute inset-0 pointer-events-none opacity-[0.06]"
-                style={{ backgroundImage: "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)", backgroundSize: "36px 36px" }}
+                style={{
+                  backgroundImage:
+                    "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+                  backgroundSize: "36px 36px",
+                }}
               />
               <div className="relative z-10 px-8 sm:px-12 py-10 sm:py-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div>
+                  {}
                   <div className="inline-flex items-center gap-2 bg-primary/20 text-primary text-xs uppercase tracking-widest font-bold px-3 py-1.5 rounded-full mb-4 border border-primary/30">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
                     What We Offer
                   </div>
-                  <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">Growth Solutions</h2>
+                  <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
+                    Growth Solutions
+                  </h2>
                   <p className="text-white/65 text-sm sm:text-base max-w-[42ch]">
                     Tailored growth systems to diagnose, architect, activate, and scale.
                   </p>
                 </div>
-                <span className="text-[6rem] sm:text-[8rem] font-heading font-black text-white/[0.06] leading-none select-none shrink-0 hidden sm:block">05</span>
+                {}
+                <span className="text-[6rem] sm:text-[8rem] font-heading font-black text-white/[0.06] leading-none select-none shrink-0 hidden sm:block">
+                  05
+                </span>
               </div>
             </div>
           </AnimatedSection>
 
+          {}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {solutions.map((sol, i) => {
               const isDark = i % 2 === 0;
               return (
                 <AnimatedSection key={sol.title} delay={i * 0.08}>
                   <div className={`group relative rounded-2xl overflow-hidden h-full min-h-[200px] flex flex-col transition-all duration-300 hover:-translate-y-2 cursor-default ${isDark ? "bg-secondary border border-white/8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/15" : "bg-white border border-border/60 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"}`}>
+
+                    {}
                     <div className={`absolute -top-10 -right-10 w-32 h-32 rounded-full blur-2xl pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isDark ? "bg-primary/20" : "bg-primary/10"}`} />
+
                     <div className="relative z-10 p-7 flex flex-col h-full">
+
+                      {}
                       <div className="flex items-start justify-between mb-6">
-                        <div className={`w-[52px] h-[52px] rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm ${isDark ? "bg-primary/20 border border-primary/30 group-hover:bg-primary group-hover:shadow-primary/40 group-hover:shadow-lg" : "bg-primary/8 border border-primary/20 group-hover:bg-primary group-hover:shadow-primary/30 group-hover:shadow-md"}`}>
+                        <div className={`w-13 h-13 w-[52px] h-[52px] rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm ${isDark ? "bg-primary/20 border border-primary/30 group-hover:bg-primary group-hover:shadow-primary/40 group-hover:shadow-lg" : "bg-primary/8 border border-primary/20 group-hover:bg-primary group-hover:shadow-primary/30 group-hover:shadow-md"}`}>
                           <sol.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                         </div>
                         <span className={`text-5xl font-heading font-black leading-none select-none transition-colors duration-300 ${isDark ? "text-white/[0.06] group-hover:text-primary/20" : "text-foreground/[0.06] group-hover:text-primary/15"}`}>
                           0{i + 1}
                         </span>
                       </div>
-                      <h3 className={`font-heading text-lg font-bold mb-3 leading-snug ${isDark ? "text-white" : "text-foreground"}`}>{sol.title}</h3>
+
+                      {}
+                      <h3 className={`font-heading text-lg font-bold mb-3 leading-snug ${isDark ? "text-white" : "text-foreground"}`}>
+                        {sol.title}
+                      </h3>
+
+                      {}
                       <div className="h-0.5 w-8 bg-primary rounded-full mb-4 group-hover:w-16 transition-all duration-400" />
-                      <p className={`text-sm leading-relaxed flex-1 ${isDark ? "text-white/55" : "text-foreground/55"}`}>{sol.desc}</p>
+
+                      {}
+                      <p className={`text-sm leading-relaxed flex-1 ${isDark ? "text-white/55" : "text-foreground/55"}`}>
+                        {sol.desc}
+                      </p>
+
+                      {}
                       <div className={`mt-6 flex items-center gap-2 text-xs font-semibold transition-all duration-300 translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 ${isDark ? "text-primary" : "text-primary"}`}>
                         <span className="tracking-wide uppercase">Learn more</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </div>
+
                     </div>
+
+                    {}
                     <div className="h-[3px] bg-gradient-to-r from-primary/80 via-primary to-primary/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
                   </div>
                 </AnimatedSection>
               );
             })}
           </div>
+
         </div>
       </section>
 
-      {/* ── WHO WE WORK WITH ─────────────────────────────────── */}
+      {}
       <section className="bg-secondary section-padding relative overflow-hidden">
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.035]"
-          style={{ backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "48px 48px" }}
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
         />
+        {}
         <div
           aria-hidden="true"
           className="pointer-events-none select-none absolute left-0 top-0 w-[220px] sm:w-[280px] md:w-[320px] h-[150px] sm:h-[190px] md:h-[210px] opacity-10 bg-primary"
-          style={{ maskImage: `url(${topLeftWave})`, WebkitMaskImage: `url(${topLeftWave})`, maskRepeat: "no-repeat", WebkitMaskRepeat: "no-repeat", maskSize: "contain", WebkitMaskSize: "contain", maskPosition: "left top", WebkitMaskPosition: "left top" }}
+          style={{
+            maskImage: `url(${topLeftWave})`,
+            WebkitMaskImage: `url(${topLeftWave})`,
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "left top",
+            WebkitMaskPosition: "left top",
+          }}
         />
         <div
           aria-hidden="true"
           className="pointer-events-none select-none absolute right-0 top-0 w-[220px] sm:w-[280px] md:w-[320px] h-[150px] sm:h-[190px] md:h-[210px] opacity-10 bg-primary scale-x-[-1]"
-          style={{ maskImage: `url(${topLeftWave})`, WebkitMaskImage: `url(${topLeftWave})`, maskRepeat: "no-repeat", WebkitMaskRepeat: "no-repeat", maskSize: "contain", WebkitMaskSize: "contain", maskPosition: "left top", WebkitMaskPosition: "left top" }}
+          style={{
+            maskImage: `url(${topLeftWave})`,
+            WebkitMaskImage: `url(${topLeftWave})`,
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "left top",
+            WebkitMaskPosition: "left top",
+          }}
         />
 
         <div className="container mx-auto relative z-10 px-6 md:px-12 lg:px-20 max-w-[1400px]">
+
+          {}
           <AnimatedSection>
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-5 border border-primary/25">
@@ -944,53 +1086,75 @@ const Index = () => {
             </div>
           </AnimatedSection>
 
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {workWith.map((item, i) => (
               <AnimatedSection key={item.label} delay={i * 0.1}>
                 <div className="group relative rounded-2xl overflow-hidden border border-white/8 cursor-default transition-all duration-400 hover:-translate-y-2 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20">
+
+                  {}
                   <div className="relative h-52 overflow-hidden bg-secondary/80">
                     {"image" in item && item.image ? (
-                      <img src={item.image} alt={item.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 brightness-75 group-hover:brightness-90" />
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 brightness-75 group-hover:brightness-90"
+                      />
                     ) : (
                       <div className="w-full h-full bg-white/5 flex items-center justify-center">
                         <item.icon className="w-16 h-16 text-primary/40" />
                       </div>
                     )}
+                    {}
                     <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
+
+                    {}
                     <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
                       <span className="text-primary text-xs font-bold">0{i + 1}</span>
                     </div>
                   </div>
+
+                  {}
                   <div className="bg-secondary px-5 pb-6 pt-0 -mt-1">
+                    {}
                     <div className="h-0.5 w-8 bg-primary rounded-full mb-4 group-hover:w-16 transition-all duration-400" />
-                    <h3 className="font-heading text-base font-bold text-white leading-snug mb-1.5">{item.label}</h3>
+
+                    <h3 className="font-heading text-base font-bold text-white leading-snug mb-1.5">
+                      {item.label}
+                    </h3>
                     <p className="text-white/40 text-xs">
                       {i === 0 && "Scale through verified brand systems"}
                       {i === 1 && "GTM infrastructure for global reach"}
                       {i === 2 && "Performance & acquisition intelligence"}
                       {i === 3 && "Creator monetization ecosystems"}
                     </p>
+
+                    {}
                     <div className="mt-4 flex items-center gap-1.5 text-primary text-xs font-semibold opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
                       <span className="tracking-wide uppercase text-[10px]">Learn more</span>
                       <ArrowRight className="w-3 h-3" />
                     </div>
                   </div>
+
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* ── IMPACT / OUTCOMES ────────────────────────────────── */}
+      {}
       <section
         className="section-padding engagement-model-section text-secondary-foreground relative overflow-hidden cursor-default"
-        onMouseEnter={() => { if (!isMobile) setEngagementModelHovered(true); }}
+        onMouseEnter={() => { if (!isMobile) setEngagementModelHovered(true);  }}
         onMouseLeave={() => { if (!isMobile) setEngagementModelHovered(false); }}
       >
+        {}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/8 blur-[120px] rounded-full pointer-events-none" />
 
         <div ref={engagementRef} className="container mx-auto relative z-10 px-6 md:px-12 lg:px-20 max-w-[1400px]">
+          {}
           <AnimatedSection>
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-5 border border-primary/25">
@@ -998,7 +1162,9 @@ const Index = () => {
                 What We Deliver
               </div>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-3">Impact</h2>
-              <p className="text-white/50 text-base max-w-[38ch] mx-auto">Outcomes we enable for every partner.</p>
+              <p className="text-white/50 text-base max-w-[38ch] mx-auto">
+                Outcomes we enable for every partner.
+              </p>
             </div>
           </AnimatedSection>
 
@@ -1012,28 +1178,56 @@ const Index = () => {
                     ? { opacity: 1, y: 0 }
                     : { opacity: 0, y: 40 }
                 }
-                transition={{ duration: 0.5, delay: engagementInView || engagementModelHovered || isMobile ? i * 0.1 : 0, ease: "easeOut" }}
+                transition={{
+                  duration: 0.5,
+                  delay: engagementInView || engagementModelHovered || isMobile ? i * 0.1 : 0,
+                  ease: "easeOut",
+                }}
                 whileHover={{ y: -8, boxShadow: "0 24px 48px -12px rgba(220,38,38,0.25)" }}
                 className="group relative rounded-2xl border border-white/8 bg-white/5 backdrop-blur-sm overflow-hidden flex flex-col transition-colors duration-300 hover:border-primary/50 hover:bg-white/8"
               >
+                {}
                 <div className="h-[3px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
+
                 <div className="p-7 flex flex-col flex-1">
+                  {}
                   <div className="flex items-center gap-3 mb-6">
                     <div className="relative w-14 h-14 shrink-0">
+                      {}
                       <svg viewBox="0 0 56 56" className="absolute inset-0 w-full h-full -rotate-90">
                         <circle cx="28" cy="28" r="24" fill="none" stroke="hsl(var(--primary)/0.2)" strokeWidth="2" />
-                        <circle cx="28" cy="28" r="24" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray={`${(i + 1) * 37.7} 150.8`} strokeLinecap="round" />
+                        <circle
+                          cx="28" cy="28" r="24"
+                          fill="none"
+                          stroke="hsl(var(--primary))"
+                          strokeWidth="2"
+                          strokeDasharray={`${(i + 1) * 37.7} 150.8`}
+                          strokeLinecap="round"
+                        />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center bg-primary/10 rounded-full border border-primary/20">
                         <span className="text-primary text-sm font-heading font-bold">{step.step}</span>
                       </div>
                     </div>
+                    {}
                     <step.icon className="w-6 h-6 text-white/20 group-hover:text-primary/60 transition-colors duration-300" />
                   </div>
-                  <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-3 leading-snug">{step.title}</h3>
+
+                  {}
+                  <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-3 leading-snug">
+                    {step.title}
+                  </h3>
+
+                  {}
                   <div className="h-0.5 w-8 bg-primary/60 rounded-full mb-4 group-hover:w-16 group-hover:bg-primary transition-all duration-400" />
-                  <p className="text-white/45 text-sm leading-relaxed flex-1 group-hover:text-white/60 transition-colors duration-300">{step.desc}</p>
+
+                  {}
+                  <p className="text-white/45 text-sm leading-relaxed flex-1 group-hover:text-white/60 transition-colors duration-300">
+                    {step.desc}
+                  </p>
                 </div>
+
+                {}
                 <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-primary/10 blur-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
               </motion.div>
             ))}
@@ -1041,254 +1235,357 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── LEADERSHIP ───────────────────────────────────────────────────── */}
+      {}
       <section
         id="leadership"
         className="scroll-mt-20 cursor-default bg-secondary relative overflow-hidden"
         onMouseEnter={() => setLeadershipHovered(true)}
         onMouseLeave={() => setLeadershipHovered(false)}
       >
-        {/* bg grid */}
+        {}
         <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
-        {/* top red glow */}
+        {}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[280px] bg-primary/12 blur-[120px] rounded-full pointer-events-none" />
 
-        {/* ── Header banner ── */}
-        <div ref={leadershipRef} className="leadership-header relative pt-24 pb-56 lg:pb-64 px-6 text-center">
-          <AnimatedSection>
-            <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-8 border border-primary/25">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
-              Leadership
-            </div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-white mb-5 leading-[1.05]">
-              Leadership That{" "}
-              <span className="text-primary relative">
-                Speaks Volumes
-                <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-primary rounded-full opacity-60" />
-              </span>
-            </h2>
-            <p className="text-white/50 text-base lg:text-lg max-w-xl mx-auto">
-              We measure success through long-term partnerships and measurable outcomes.
-            </p>
-          </AnimatedSection>
+        {}
+        <div ref={leadershipRef} className="leadership-header relative pt-20 pb-52 lg:pb-60 px-6">
+
+          {}
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-primary to-transparent opacity-60 pointer-events-none" />
+
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <AnimatedSection>
+              <div className="grid lg:grid-cols-[1fr_auto] items-end gap-8">
+
+                {}
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-7 border border-primary/25">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse block" />
+                    Leadership
+                  </div>
+
+                  <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] mb-6">
+                    Leadership<br />
+                    That <span className="text-primary italic">Speaks</span><br />
+                    <span className="relative">
+                      Volumes
+                      <span className="absolute -bottom-2 left-0 w-3/4 h-[3px] bg-gradient-to-r from-primary to-transparent rounded-full" />
+                    </span>
+                  </h2>
+
+                  <p className="text-white/45 text-base max-w-[40ch] leading-relaxed">
+                    We measure success through long-term partnerships and measurable outcomes.
+                  </p>
+                </div>
+
+                {}
+                <div className="hidden lg:flex flex-col gap-4 shrink-0 self-center mb-4">
+                  <div className="rounded-2xl border border-white/8 bg-white/4 backdrop-blur-sm px-7 py-5 text-center min-w-[140px]">
+                    <p className="font-heading font-black text-primary text-3xl leading-none">20+</p>
+                    <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">Years Exp.</p>
+                  </div>
+                  <div className="rounded-2xl border border-primary/25 bg-primary/10 px-7 py-5 text-center">
+                    <p className="font-heading font-black text-white text-3xl leading-none">3</p>
+                    <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">Directors</p>
+                  </div>
+                </div>
+
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
 
-        {/* ── Leader cards — overlap the banner ── */}
-        <div className="relative -mt-44 pb-0 z-10">
+        {}
+        <div className="relative -mt-36 pb-0 z-10">
           <div className="container mx-auto px-6 max-w-6xl">
-
-            {/* ── NEW: Section title above photos ── */}
             <AnimatedSection>
               <div className="flex items-center gap-4 mb-10">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/15" />
-                <h3 className="font-heading text-xs font-bold text-white/50 uppercase tracking-[0.25em] px-4 whitespace-nowrap">
-                  Leadership Behind the Infrastructure
-                </h3>
+                <h3 className="font-heading text-xs font-bold text-white/50 uppercase tracking-[0.25em] px-4">Behind the Infrastructure</h3>
                 <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/15" />
               </div>
             </AnimatedSection>
 
-            {/* ── Cards grid ── */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {leaders.map((leader, i) => (
-                <motion.div
-                  key={leader.name}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={leadershipInView || leadershipHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                  transition={{ duration: 0.65, delay: leadershipInView || leadershipHovered ? i * 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30 h-full flex flex-col cursor-default transition-all duration-400 hover:-translate-y-3 hover:shadow-primary/25">
+              {leaders.map((leader, i) => {
+                const isExpanded = expandedLeader === leader.name;
+                return (
+                  <motion.div
+                    key={leader.name}
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={leadershipInView || leadershipHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+                    transition={{ duration: 0.65, delay: leadershipInView || leadershipHovered ? i * 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30 flex flex-col cursor-default transition-all duration-400 hover:-translate-y-2 hover:shadow-primary/20 border border-white/6 hover:border-primary/25">
 
-                    {/* ── Consistent image: fixed h-64, object-cover object-top ── */}
-                    <div className="relative h-64 w-full overflow-hidden bg-secondary shrink-0">
-                      {"image" in leader && leader.image ? (
-                        <img
-                          src={leader.image}
-                          alt={leader.name}
-                          className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-secondary to-primary/30 flex items-center justify-center">
-                          <span className="font-heading text-6xl font-black text-white/20">
-                            {leader.name.split(" ").map((n) => n[0]).join("")}
-                          </span>
+                      {}
+                      <div className="relative h-[260px] overflow-hidden bg-secondary shrink-0">
+                        {"image" in leader && leader.image ? (
+                          <img src={leader.image} alt={leader.name}
+                            className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-105"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-secondary to-primary/30 flex items-center justify-center">
+                            <span className="font-heading text-6xl font-black text-white/20">{leader.name.split(" ").map((n) => n[0]).join("")}</span>
+                          </div>
+                        )}
+                        {/* gradient fade into body */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,8%)] via-[hsl(0,0%,8%)]/30 to-transparent" />
+                        {}
+                        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                        {}
+                        <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 flex items-center justify-center">
+                          <span className="text-white/80 text-[10px] font-bold">0{i+1}</span>
                         </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-                      <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">0{i + 1}</span>
+                        {}
+                        <div className="absolute bottom-0 left-0 right-0 px-5 pb-4 pt-8 bg-gradient-to-t from-[hsl(0,0%,8%)] to-transparent">
+                          <p className="font-heading font-black text-white text-[1.15rem] leading-tight">{leader.name}</p>
+                          <p className="text-primary text-[10px] font-bold mt-0.5 tracking-[0.12em] uppercase leading-snug line-clamp-2">{leader.role}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* ── Card body ── */}
-                    <div className="bg-secondary px-6 pb-6 pt-4 flex flex-col flex-1 gap-3 border border-white/8 border-t-0 rounded-b-2xl">
-                      <div>
-                        <p className="font-heading font-black text-white text-xl leading-tight">{leader.name}</p>
-                        <p className="text-primary text-xs font-bold mt-1 uppercase tracking-widest">{leader.role}</p>
-                      </div>
-                      <div className="h-px bg-white/8 group-hover:bg-primary/30 transition-colors duration-300" />
-                      {/* ── Bio: ~25-30% shorter ── */}
-                      <p className="text-white/55 text-sm leading-relaxed flex-1 group-hover:text-white/75 transition-colors duration-300">
-                        {leader.bio}
-                      </p>
-                      <div className="flex flex-wrap gap-1.5 pt-1">
-                        {leader.tags.split(" | ").map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 rounded-full bg-white/6 border border-white/10 text-white/45 text-[10px] font-semibold group-hover:bg-primary/15 group-hover:border-primary/30 group-hover:text-primary transition-all duration-300"
+                      {}
+                      <div className="bg-[hsl(0,0%,8%)] px-5 pb-5 pt-4 flex flex-col gap-3 border-t border-white/5">
+
+                        {}
+                        <div className="h-[1.5px] w-8 bg-primary rounded-full group-hover:w-20 transition-all duration-500" />
+
+                        {}
+                        <div>
+                          <p className={`text-white/55 text-sm leading-relaxed group-hover:text-white/70 transition-colors duration-300 ${isExpanded ? "" : "line-clamp-3"}`}>
+                            {leader.association}
+                          </p>
+                          <button
+                            onClick={() => setExpandedLeader(isExpanded ? null : leader.name)}
+                            className="mt-2 flex items-center gap-1.5 text-primary text-xs font-bold hover:text-primary/80 transition-colors duration-200"
                           >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                            {isExpanded ? (
+                              <>Show Less <span className="text-[10px]">?</span></>
+                            ) : (
+                              <>Read More <span className="text-[10px]">?</span></>
+                            )}
+                          </button>
+                        </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                  </div>
-                </motion.div>
-              ))}
+                        {}
+                        <div className="flex flex-wrap gap-1.5 pt-0.5">
+                          {leader.tags.split(" | ").map((tag) => (
+                            <span key={tag} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/8 text-white/35 text-[9px] font-semibold group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-primary/80 transition-all duration-300">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        {/* ── MENTORS — increased top spacing ── */}
-        <div className="bg-secondary pt-28 lg:pt-36 pb-20 lg:pb-28 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-          <div className="absolute inset-0 pointer-events-none opacity-[0.035]" style={{ backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[220px] bg-primary/10 blur-[100px] rounded-full pointer-events-none" />
+        {}
+        <div className="bg-[hsl(0,0%,6%)] py-20 lg:py-28 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "52px 52px" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[200px] bg-primary/8 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="container mx-auto px-6 max-w-5xl relative z-10">
             <AnimatedSection>
-              <div className="flex items-end justify-between mb-14 gap-6 flex-wrap">
+              <div className="flex items-end justify-between mb-12 gap-6 flex-wrap">
                 <div>
                   <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-4 border border-primary/25">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse block" />
                     Advisory Board
                   </div>
                   <h2 className="font-heading text-3xl md:text-4xl font-black text-white leading-tight">
-                    Strategic<br /><span className="text-primary">Mentors</span>
+                    Strategic <span className="text-primary">Mentors</span>
                   </h2>
                 </div>
-                <p className="text-white/35 text-sm max-w-[28ch] leading-relaxed text-right">
+                <p className="text-white/30 text-sm max-w-[28ch] leading-relaxed text-right">
                   Guiding the Klaun ecosystem with decades of industry expertise.
                 </p>
               </div>
             </AnimatedSection>
 
-            <div className="space-y-4">
-              {mentors.map((mentor, i) => (
-                <motion.div
-                  key={mentor.name}
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                  animate={leadershipInView || leadershipHovered ? { opacity: 1, x: 0 } : { opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                  transition={{ duration: 0.6, delay: leadershipInView || leadershipHovered ? i * 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="group relative rounded-2xl border border-white/8 overflow-hidden bg-white/[0.03] backdrop-blur-sm transition-all duration-400 hover:bg-white/[0.07] hover:border-primary/40 hover:shadow-xl hover:shadow-primary/15">
-                    <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary/80 via-primary to-primary/20 opacity-40 group-hover:opacity-100 transition-opacity duration-400" />
-                    <div className="flex items-center gap-5 px-7 py-5">
-                      <span className="text-5xl font-heading font-black text-white/[0.05] leading-none select-none shrink-0 group-hover:text-primary/15 transition-colors duration-400 w-10 text-center">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <div className="relative shrink-0">
-                        <div className="w-[68px] h-[68px] rounded-xl overflow-hidden ring-2 ring-white/10 group-hover:ring-primary/40 transition-all duration-300 shadow-lg">
-                          {"image" in mentor && mentor.image ? (
-                            <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-400" />
-                          ) : (
-                            <div className="w-full h-full bg-primary/15 flex items-center justify-center">
-                              <span className="font-heading font-bold text-primary text-xl">{mentor.name.split(" ").map((n) => n[0]).join("")}</span>
-                            </div>
-                          )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {mentors.map((mentor, i) => {
+                const isExpanded = expandedMentor === mentor.name;
+                return (
+                  <motion.div
+                    key={mentor.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={leadershipInView || leadershipHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ duration: 0.6, delay: leadershipInView || leadershipHovered ? i * 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="group relative rounded-2xl border border-white/7 bg-white/[0.03] overflow-hidden transition-all duration-400 hover:border-primary/35 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-primary/10 h-full flex flex-col">
+
+                      {}
+                      <div className="h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
+
+                      <div className="p-6 flex gap-5 items-start">
+                        {}
+                        <div className="relative shrink-0">
+                          <div className="w-[76px] h-[76px] rounded-2xl overflow-hidden ring-2 ring-white/8 group-hover:ring-primary/40 transition-all duration-300 shadow-xl shadow-black/30">
+                            {"image" in mentor && mentor.image ? (
+                              <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-400" />
+                            ) : (
+                              <div className="w-full h-full bg-primary/15 flex items-center justify-center">
+                                <span className="font-heading font-bold text-primary text-2xl">{mentor.name.split(" ").map((n) => n[0]).join("")}</span>
+                              </div>
+                            )}
+                          </div>
+                          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-primary text-white text-[8px] font-black tracking-widest whitespace-nowrap shadow-lg shadow-primary/40">
+                            ADVISOR
+                          </span>
                         </div>
-                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-primary text-white text-[8px] font-black tracking-widest whitespace-nowrap shadow-md shadow-primary/40">
-                          ADVISOR
+
+                        {}
+                        <div className="flex-1 min-w-0">
+                          <p className="font-heading font-black text-white text-lg leading-tight">{mentor.name}</p>
+                          <p className="text-primary text-[10px] font-bold mt-1 tracking-wide leading-snug">{mentor.role}</p>
+                          <div className="h-[1.5px] w-8 bg-primary/50 rounded-full mt-3 group-hover:w-16 group-hover:bg-primary transition-all duration-500" />
                         </div>
                       </div>
-                      <div className="w-px h-14 bg-white/8 shrink-0 group-hover:bg-primary/25 transition-colors duration-300" />
-                      <div className="shrink-0 min-w-[150px]">
-                        <p className="font-heading font-black text-white text-lg leading-tight">{mentor.name}</p>
-                        <p className="text-primary text-xs font-bold mt-1 tracking-wide">{mentor.role}</p>
+
+                      {}
+                      <div className="px-6 pb-5 flex flex-col gap-3 flex-1">
+                        <div>
+                          <p className={`text-sm text-white/45 leading-relaxed group-hover:text-white/65 transition-colors duration-300 ${isExpanded ? "" : "line-clamp-3"}`}>
+                            {mentor.desc}
+                          </p>
+                          <button
+                            onClick={() => setExpandedMentor(isExpanded ? null : mentor.name)}
+                            className="mt-2 flex items-center gap-1.5 text-primary text-xs font-bold hover:text-primary/80 transition-colors duration-200"
+                          >
+                            {isExpanded ? <>Show Less <span className="text-[10px]">?</span></> : <>Read More <span className="text-[10px]">?</span></>}
+                          </button>
+                        </div>
+
+                        {}
+                        {"tags" in mentor && mentor.tags && (
+                          <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
+                            {(mentor.tags as string).split(" | ").map((tag) => (
+                              <span key={tag} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/8 text-white/30 text-[9px] font-semibold group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-primary/80 transition-all duration-300">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                      <div className="w-px h-14 bg-white/8 shrink-0 hidden md:block group-hover:bg-primary/25 transition-colors duration-300" />
-                      <p className="text-sm text-white/45 leading-relaxed flex-1 hidden md:block group-hover:text-white/65 transition-colors duration-300">{mentor.desc}</p>
-                      <ArrowRight className="w-5 h-5 text-white/15 shrink-0 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
                     </div>
-                    <div className="md:hidden px-7 pb-5 -mt-1">
-                      <p className="text-sm text-white/45 leading-relaxed">{mentor.desc}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
+        {}
+        <div className="relative overflow-hidden" style={{ background: "hsl(0,0%,95%)" }}>
+          <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, rgba(220,38,38,0.05) 1.2px, transparent 1.2px)", backgroundSize: "28px 28px" }} />
+          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(220,38,38,0.3) 50%, transparent)" }} />
+          <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08) 50%, transparent)" }} />
 
-        {/* ── BRAND ASSOCIATIONS — increased spacing ── */}
-        <div className="relative bg-secondary overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
-          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[180px] bg-primary/8 blur-[100px] rounded-full pointer-events-none" />
+          <div className="container mx-auto px-6 max-w-[1300px] relative z-10 py-20 lg:py-24">
 
-          <div className="container mx-auto px-6 max-w-6xl relative z-10 py-24 lg:py-32">
+            {}
             <AnimatedSection>
-
-              {/* Header */}
-              <div className="text-center mb-14">
-                <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-5 border border-primary/25">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
-                  Ecosystem Trust
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-primary/8 text-primary text-[10px] uppercase tracking-[0.22em] font-black px-4 py-2 rounded-full mb-5 border border-primary/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
+                    Ecosystem Trust
+                  </div>
+                  <h2 className="font-heading text-4xl md:text-5xl font-black text-foreground leading-[1.0]">
+                    Global Brands &<br />
+                    <span className="text-primary relative">
+                      Growth Ecosystems
+                      <span className="absolute -bottom-1 left-0 w-3/4 h-[3px] bg-primary/50 rounded-full" />
+                    </span>
+                  </h2>
                 </div>
-                <h2 className="font-heading text-2xl md:text-3xl font-black text-white mb-3">
-                  Leadership Experience & Ecosystem Associations
-                </h2>
-                <p className="text-white/35 text-sm max-w-[40ch] mx-auto leading-relaxed">
+                <p className="text-foreground/40 text-sm max-w-[28ch] leading-relaxed lg:text-right">
                   Leadership exposure across global brands and ecosystem platforms.
                 </p>
               </div>
+            </AnimatedSection>
 
-              {/* Logo cards */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  { label: "Xiaomi",     image: assocXiaomi     },
-                  { label: "Marsh",      image: assocMarsh      },
-                  { label: "StartupLab", image: assocStartupLab },
-                  { label: "Tremis",     image: assocTremis     },
-                ].map((brand, i) => (
-                  <AnimatedSection key={brand.label} delay={i * 0.08}>
-                    <div className="group relative rounded-2xl border border-white/8 bg-white/4 overflow-hidden transition-all duration-350 hover:-translate-y-2 hover:border-primary/45 hover:shadow-xl hover:shadow-primary/20 cursor-default">
-                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
-                      <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-primary/10 blur-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-                      <div className="p-8 flex flex-col items-center gap-5 relative z-10">
-                        <div className="w-20 h-20 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-black/20 group-hover:shadow-primary/20 group-hover:scale-105 transition-all duration-300">
-                          {"image" in brand && brand.image ? (
-                            <img src={brand.image} alt={brand.label} className="max-h-11 max-w-[52px] object-contain" />
-                          ) : (
-                            <span className="text-sm font-heading font-semibold text-foreground">{brand.label}</span>
-                          )}
-                        </div>
-                        <div className="text-center">
-                          <p className="font-heading font-bold text-white text-sm group-hover:text-primary transition-colors duration-300">{brand.label}</p>
-                          <div className="h-[1.5px] w-4 bg-primary/40 rounded-full mx-auto mt-1.5 group-hover:w-10 group-hover:bg-primary transition-all duration-400" />
-                        </div>
+            {}
+            <AnimatedSection delay={0.1}>
+              <div className="rounded-2xl overflow-hidden border border-black/8 shadow-sm bg-white">
+
+                {}
+                <div className="grid grid-cols-2 lg:grid-cols-4" style={{ borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
+                  {([
+                    { label: "Xiaomi",     image: assocXiaomi,     desc: "Consumer Technology"  },
+                    { label: "Marsh",      image: assocMarsh,      desc: "Insurance & Risk"     },
+                    { label: "StartupLab", image: assocStartupLab, desc: "Startup Ecosystem"    },
+                    { label: "Tremis",     image: assocTremis,     desc: "Digital Platform"     },
+                  ] as const).map((brand, i, arr) => (
+                    <div
+                      key={brand.label}
+                      className="group flex flex-col items-center justify-center gap-4 py-10 px-6 cursor-default transition-all duration-200 hover:bg-primary/3 relative"
+                      style={{ borderRight: i < arr.length - 1 ? "1px solid rgba(0,0,0,0.07)" : "none" }}
+                    >
+                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                      <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md shadow-black/10 group-hover:scale-110 group-hover:shadow-primary/20 transition-all duration-300" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                        <img src={brand.image} alt={brand.label} className="max-h-10 max-w-[44px] object-contain" />
+                      </div>
+                      <div className="text-center">
+                        <p className="font-heading font-black text-foreground text-sm group-hover:text-primary transition-colors duration-300">{brand.label}</p>
+                        <p className="text-foreground/35 text-[10px] mt-0.5 font-medium">{brand.desc}</p>
                       </div>
                     </div>
-                  </AnimatedSection>
-                ))}
+                  ))}
+                </div>
+
+                {}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" style={{ borderBottom: "none" }}>
+                  {[
+                    { label: "realme",          desc: "Consumer Tech",    image: realmeLogo, emoji: "??" },
+                    { label: "Intex",           desc: "Mobile & Devices", image: intexLogo,  emoji: "??" },
+                    { label: "Spice Digital",   desc: "Telecom",          image: spiceDigitalLogo, emoji: "??" },
+                    { label: "Superfan Studio", desc: "AR / VR / XR",     image: superfanStudioLogo },
+                    { label: "Superfan.AI",     desc: "AI Experiences",   image: superfanAiLogo },
+                    { label: "Consumer Technology Ecosystems",  desc: "Ecosystem Network", image: consumerTechnologyEcosystems },
+                    { label: "Experiential Media Platforms",    desc: "Ecosystem Network", image: experientialMediaPlatforms },
+                    { label: "Enterprise Partnership Networks", desc: "Ecosystem Network", image: enterprisePartnershipNetwork },
+                  ].map((brand, i, arr) => (
+                    <div
+                      key={brand.label}
+                      className="group flex flex-col items-center justify-center gap-4 py-10 px-4 cursor-default transition-all duration-200 hover:bg-primary/3 relative"
+                      style={{ borderRight: i < arr.length - 1 ? "1px solid rgba(0,0,0,0.07)" : "none" }}
+                    >
+                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform duration-300" style={{ background: "hsl(0,0%,95%)", border: "1px solid rgba(0,0,0,0.06)" }}>
+                        {brand.image ? (
+                          <img src={brand.image} alt={brand.label} className="max-h-9 max-w-[40px] object-contain" />
+                        ) : (
+                          brand.emoji
+                        )}
+                      </div>
+                      <div className="text-center">
+                        <p className="font-heading font-black text-foreground/75 text-sm group-hover:text-primary transition-colors duration-300">{brand.label}</p>
+                        <p className="text-foreground/30 text-[10px] mt-0.5 font-medium">{brand.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
               </div>
-
-              {/* ── NEW: Disclaimer text under logo strip ── */}
-              <p className="text-center text-xs text-white/20 mt-10 max-w-[52ch] mx-auto leading-relaxed">
-                Leadership exposure across global brands and ecosystem platforms. Associations represent prior professional experience and strategic partnerships.
-              </p>
-
             </AnimatedSection>
+
+            <p className="text-center text-[10px] text-foreground/25 mt-6 mx-auto leading-relaxed max-w-[58ch]">
+              Associations represent prior professional experience and strategic partnerships of Klaun leadership.
+            </p>
           </div>
         </div>
-
       </section>
 
-      {/* ── ENTERPRISE CTA ───────────────────────────────────── */}
+
+                        {}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container mx-auto text-center max-w-3xl">
           <AnimatedSection>
@@ -1299,7 +1596,7 @@ const Index = () => {
               Diagnose your growth challenges and architect a scalable ecosystem.
             </p>
             <button onClick={() => scrollTo("contact")}>
-              <Button variant="cta" size="lg" className="text-base px-10 py-6 border-2 border-white/40">
+              <Button variant="heroOutline" size="lg" className="text-base px-10 py-6">
                 Start a Conversation
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -1308,28 +1605,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── CONTACT ──────────────────────────────────────────── */}
+      {}
       <section id="contact" className="scroll-mt-20 relative overflow-hidden bg-white">
 
+        {}
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #d0d0d0 1.3px, transparent 1.3px)", backgroundSize: "22px 22px", opacity: 0.5 }} />
 
+        {}
         <div className="absolute left-0 top-0 bottom-0 w-full lg:w-[48%] overflow-hidden">
           <img src={contactImage} alt="Klaun team" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-white lg:to-white/0" />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-secondary/90 lg:hidden" />
+          {}
           <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
         </div>
 
         <div className="container mx-auto max-w-[1400px] relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[700px]">
 
-            {/* LEFT — dark info panel */}
+            {}
             <AnimatedSection>
               <div className="flex flex-col justify-center gap-8 px-8 sm:px-12 lg:px-14 xl:px-20 py-20 lg:py-28 h-full">
+
                 <div className="inline-flex items-center gap-2 bg-primary text-white text-xs uppercase tracking-widest font-black px-4 py-2 rounded-full w-fit shadow-lg shadow-primary/30">
                   <span className="w-1.5 h-1.5 rounded-full bg-white/70 block" />
                   Get In Touch
                 </div>
+
                 <div>
                   <h2 className="font-heading text-5xl md:text-6xl font-black text-white leading-[1.0] mb-5">
                     Contact<br />
@@ -1339,12 +1641,16 @@ const Index = () => {
                     Have a project in mind? Our team is ready to help you build.
                   </p>
                 </div>
+
+                {}
                 <div className="h-[2px] w-16 bg-primary rounded-full" />
+
+                {}
                 <div className="flex flex-col gap-4">
                   {[
                     { num: "500+", label: "Brands Served Globally" },
                     { num: "24h",  label: "Response Guarantee" },
-                    { num: "🔒",   label: "100% Confidential" },
+                    { num: "??",   label: "100% Confidential" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0">
@@ -1357,7 +1663,7 @@ const Index = () => {
               </div>
             </AnimatedSection>
 
-            {/* RIGHT — form panel */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -1366,6 +1672,7 @@ const Index = () => {
             >
               <div className="bg-white lg:rounded-none px-8 sm:px-10 lg:px-12 xl:px-16 py-16 lg:py-20 h-full flex flex-col justify-center shadow-2xl shadow-black/5 border-l border-border/30">
 
+                {}
                 <div className="mb-8">
                   <p className="text-foreground/40 text-xs uppercase tracking-[0.2em] font-bold mb-1">Enquiry Type</p>
                   <div className="flex flex-wrap gap-2 mt-3">
@@ -1394,42 +1701,58 @@ const Index = () => {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="block text-[10px] font-black text-foreground/40 uppercase tracking-[0.18em]">Name</label>
-                      <Input name="name" placeholder="Your full name" required className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium" />
+                      <Input
+                        name="name" placeholder="Your full name" required
+                        className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium"
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="block text-[10px] font-black text-foreground/40 uppercase tracking-[0.18em]">Email</label>
-                      <Input name="email" placeholder="you@company.com" type="email" required className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium" />
+                      <Input
+                        name="email" placeholder="you@company.com" type="email" required
+                        className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium"
+                      />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="block text-[10px] font-black text-foreground/40 uppercase tracking-[0.18em]">Phone Number</label>
-                      <Input name="phone" placeholder="+91 00000 00000" type="tel" className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium" />
+                      <Input
+                        name="phone" placeholder="+91 00000 00000" type="tel"
+                        className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium"
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="block text-[10px] font-black text-foreground/40 uppercase tracking-[0.18em]">Company / Brand Name</label>
-                      <Input name="company" placeholder="Your company" required className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium" />
+                      <Input
+                        name="company" placeholder="Your company" required
+                        className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary hover:border-border placeholder:text-foreground/30 font-medium"
+                      />
                     </div>
                   </div>
 
                   {activeForm === "startup" && (
                     <div className="space-y-2">
                       <label className="block text-[10px] font-black text-foreground/40 uppercase tracking-[0.18em]">Stage</label>
-                      <Input name="stage" placeholder="Pre-seed / Seed / Series A" className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary placeholder:text-foreground/30 font-medium" />
+                      <Input
+                        name="stage" placeholder="Pre-seed / Seed / Series A"
+                        className="h-12 text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary placeholder:text-foreground/30 font-medium"
+                      />
                     </div>
                   )}
 
                   <div className="space-y-2">
                     <label className="block text-[10px] font-black text-foreground/40 uppercase tracking-[0.18em]">Message</label>
-                    <Textarea name="message" placeholder="Tell us about your growth challenges..." rows={4} required className="text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 py-3 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary placeholder:text-foreground/30 resize-none font-medium" />
+                    <Textarea
+                      name="message" placeholder="Tell us about your growth challenges..." rows={4} required
+                      className="text-sm rounded-xl border-2 border-border/40 bg-muted/40 px-4 py-3 focus:bg-white transition-all duration-200 focus:ring-0 focus:border-primary placeholder:text-foreground/30 resize-none font-medium"
+                    />
                   </div>
 
                   <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} className="pt-2">
                     <Button
-                      type="submit"
-                      variant="cta"
-                      size="lg"
+                      type="submit" variant="cta" size="lg"
                       className="w-full h-[54px] text-base font-black rounded-xl shadow-xl shadow-primary/25 tracking-wide transition-all duration-200"
                       disabled={isSubmitting}
                     >
@@ -1444,6 +1767,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
 
     </main>
   );

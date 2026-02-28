@@ -33,7 +33,7 @@ const Ecosystem = () => {
   return (
     <main className="pt-16">
 
-      {/* Hero */}
+      {}
       <section className="section-padding bg-secondary text-secondary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
@@ -45,7 +45,7 @@ const Ecosystem = () => {
         </div>
       </section>
 
-      {/* Ecosystem Cards */}
+      {}
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-5xl space-y-8 lg:space-y-10">
           {ecosystemSections.map((section, i) => (

@@ -41,7 +41,7 @@ const Leadership = () => {
   return (
     <main className="pt-16">
 
-      {/* Hero */}
+      {}
       <section className="section-padding bg-secondary text-secondary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
@@ -53,7 +53,7 @@ const Leadership = () => {
         </div>
       </section>
 
-      {/* Leader Cards */}
+      {}
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-5xl">
           <AnimatedSection>
@@ -76,7 +76,7 @@ const Leadership = () => {
         </div>
       </section>
 
-      {/* Strategic Mentors */}
+      {}
       <section className="section-padding bg-muted">
         <div className="container mx-auto max-w-5xl">
           <AnimatedSection>
@@ -96,7 +96,7 @@ const Leadership = () => {
         </div>
       </section>
 
-      {/* Brand Associations */}
+      {}
       <section className="section-padding bg-background">
         <div className="container mx-auto text-center max-w-3xl">
           <AnimatedSection>

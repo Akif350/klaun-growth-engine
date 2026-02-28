@@ -4,7 +4,7 @@ const About = () => {
   return (
     <main className="pt-16">
 
-      {/* Hero */}
+      {}
       <section className="section-padding bg-secondary text-secondary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
@@ -16,9 +16,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why Klaun Exists */}
+      {}
       <section className="relative overflow-hidden bg-secondary py-24 lg:py-32">
-        {/* grid pattern */}
+        {}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{
@@ -27,12 +27,12 @@ const About = () => {
             backgroundSize: "48px 48px",
           }}
         />
-        {/* glows */}
+        {}
         <div className="absolute -top-32 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
         <div className="absolute -bottom-32 left-0 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-5xl relative z-10">
-          {/* section label */}
+          {}
           <AnimatedSection>
             <div className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs uppercase tracking-widest font-bold px-4 py-2 rounded-full mb-10 border border-primary/25">
               <span className="w-1.5 h-1.5 rounded-full bg-primary block" />
@@ -47,7 +47,7 @@ const About = () => {
             </h2>
           </AnimatedSection>
 
-          {/* two-col cards */}
+          {}
           <div className="grid sm:grid-cols-2 gap-5 mb-12">
             <AnimatedSection delay={0.1}>
               <div className="h-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 flex gap-5 items-start">
@@ -78,7 +78,7 @@ const About = () => {
             </AnimatedSection>
           </div>
 
-          {/* chain flow */}
+          {}
           <AnimatedSection delay={0.3}>
             <div className="flex flex-wrap items-center gap-3">
               {["Brand", "Creator", "Platform", "Performance", "Revenue"].map((step, i, arr) => (
@@ -96,7 +96,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Vision & Mission */}
+      {}
       <section className="section-padding bg-background relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.045]"
@@ -121,7 +121,7 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
 
-            {/* Vision */}
+            {}
             <AnimatedSection>
               <div className="group relative rounded-2xl border border-border bg-secondary h-full min-h-[280px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/15 hover:border-primary/40 cursor-default overflow-hidden">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-br-full pointer-events-none" />
@@ -148,7 +148,7 @@ const About = () => {
               </div>
             </AnimatedSection>
 
-            {/* Mission */}
+            {}
             <AnimatedSection delay={0.15}>
               <div className="group relative rounded-2xl border border-primary/25 bg-primary h-full min-h-[280px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/25 cursor-default overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full pointer-events-none" />
@@ -185,7 +185,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Philosophy */}
+      {}
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-4xl">
           <AnimatedSection>
