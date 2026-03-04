@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,8 +44,25 @@ const Header = () => {
   const showSolidNav = isScrolled;
 
   const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(href.replace("#", ""));
+      if (el) {
+        const headerOffset = 70;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 150);
+  };
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    scrollTo(href);
   };
 
   return (
@@ -53,11 +72,11 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-14 lg:h-16 px-4 sm:px-6">
-        <button onClick={() => scrollTo("#home")} className="shrink-0 flex items-center hover:opacity-90 transition-opacity">
+        <button onClick={() => scrollTo("#home")} className="shrink-0 flex items-center hover:opacity-90 transition-opacity max-w-[45%]">
           <img
-            src={klaunLogo}
+            src={typeof klaunLogo === "string" ? klaunLogo : klaunLogo.src}
             alt="KLAUN"
-            className={`h-20 lg:h-24 w-auto object-contain transition-all duration-300 ${showSolidNav ? "" : "brightness-0 invert"}`}
+            className={`h-14 sm:h-16 lg:h-24 w-auto object-contain transition-all duration-300 ${showSolidNav ? "" : "brightness-0 invert"}`}
           />
         </button>
 
@@ -82,16 +101,19 @@ const Header = () => {
             rel="noopener noreferrer"
             className="shrink-0 flex items-center hover:opacity-80 transition-opacity"
           >
-            <img src={linkedinIcon} alt="LinkedIn" className="h-6 w-6 xl:h-7 xl:w-7 object-contain" />
+            <img src={typeof linkedinIcon === "string" ? linkedinIcon : linkedinIcon.src} alt="LinkedIn" className="h-6 w-6 xl:h-7 xl:w-7 object-contain" />
           </a>
-          <button onClick={() => scrollTo("#contact")} className="shrink-0">
-            <Button variant="cta" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
-              Get Started
-            </Button>
-          </button>
+          <Button variant="cta" size="sm" className="text-xs xl:text-sm px-3 xl:px-4 shrink-0" onClick={() => scrollTo("#contact")}>
+            Get Started
+          </Button>
         </div>
 
-        <button className={`lg:hidden transition-colors ${showSolidNav ? "text-foreground" : "text-white"}`} onClick={() => setIsOpen(!isOpen)}>
+        <button
+          type="button"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          className={`lg:hidden shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2 touch-manipulation transition-colors ${showSolidNav ? "text-foreground" : "text-white"}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -106,19 +128,22 @@ const Header = () => {
           >
             <nav className="flex flex-col gap-1 p-6">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className={`py-3 text-sm font-medium text-left transition-colors border-b border-border ${activeSection === link.href ? "text-primary" : "text-muted-foreground"}`}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`py-3 text-sm font-medium text-left transition-colors border-b border-border touch-manipulation min-h-[44px] flex items-center ${activeSection === link.href ? "text-primary" : "text-muted-foreground"}`}
                 >
                   {link.label}
-                </button>
+                </a>
               ))}
-              <button onClick={() => scrollTo("#contact")} className="mt-4">
-                <Button variant="cta" className="w-full">
-                  Get Started
-                </Button>
-              </button>
+              <Button
+                variant="cta"
+                className="w-full mt-4 touch-manipulation"
+                onClick={(e) => handleNavClick(e, "#contact")}
+              >
+                Get Started
+              </Button>
             </nav>
           </motion.div>
         )}

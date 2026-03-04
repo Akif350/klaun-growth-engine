@@ -1,5 +1,7 @@
+"use client";
+
 import AnimatedSection from "@/components/AnimatedSection";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Layers, Network, Zap, BarChart3, Shield } from "lucide-react";
 
@@ -67,8 +69,8 @@ const Solutions = () => {
       {}
       <section className="section-padding bg-primary text-primary-foreground text-center">
         <AnimatedSection>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Let's Architect Your Growth</h2>
-          <Link to="/contact">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Let&apos;s Architect Your Growth</h2>
+          <Link href="/#contact">
             <Button variant="cta" size="lg" className="text-base px-10 py-6 border-2 border-white/40">
               Get Started <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

@@ -114,7 +114,7 @@ const About = () => {
                 Our Direction
               </div>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-                Where We're Going & How We Get There
+                Where We&apos;re Going & How We Get There
               </h2>
             </div>
           </AnimatedSection>
@@ -138,7 +138,7 @@ const About = () => {
                     <span className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-primary">Vision</span>
                   </div>
                   <h3 className="font-heading text-xl font-bold text-secondary-foreground mb-4">
-                    The World's Most Trusted Growth Infrastructure
+                    The World&apos;s Most Trusted Growth Infrastructure
                   </h3>
                   <p className="text-secondary-foreground/65 text-sm leading-relaxed flex-1">
                     Where every brand scales through verified, intelligent systems — with zero guesswork.
@@ -194,7 +194,7 @@ const About = () => {
               We prepare deeply before stepping on stage — delivering results that matter.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-[45ch]">
-              We design growth ecosystems tailored to each brand's challenges and positioning.
+              We design growth ecosystems tailored to each brand&apos;s challenges and positioning.
             </p>
           </AnimatedSection>
         </div>

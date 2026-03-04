@@ -1,3 +1,5 @@
+"use client";
+
 import Marquee from "react-fast-marquee";
 import TypewriterText from "@/components/TypewriterText";
 import { Button } from "@/components/ui/button";
@@ -234,6 +236,8 @@ const mentors = [
   },
 ];
 
+const getImgSrc = (img: unknown) => (typeof img === "string" ? img : (img as { src?: string })?.src ?? "");
+
 type FormType = "enterprise" | "partnership" | "startup";
 const formTitles: Record<FormType, string> = {
   enterprise: "Enterprise Growth Enquiry",
@@ -311,7 +315,7 @@ const Index = () => {
       {}
       <section id="home" className="relative min-h-screen flex flex-col overflow-hidden">
         <img
-          src={heroBanner}
+          src={getImgSrc(heroBanner)}
           alt="Klaun growth ecosystem intelligence"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -321,7 +325,7 @@ const Index = () => {
           <div className="text-center w-full">
             <TypewriterText />
             <p className="mt-6 sm:mt-8 text-primary-foreground text-sm sm:text-base md:text-lg lg:text-xl max-w-[52ch] mx-auto font-medium leading-relaxed">
-              We design unified growth systems connecting Brand ? Creator ? Platform ? Performance ? Revenue.
+              We design unified growth systems connecting Brand, Creator, Platform, Performance, Revenue.
             </p>
             <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={() => scrollTo("contact")} className="btn-hero-shine inline-flex">
@@ -356,7 +360,7 @@ const Index = () => {
       </section>
 
       {}
-      <div className="philosophy-strip">Solve ? Serve ? Scale ? Smile</div>
+      <div className="philosophy-strip">Solve · Serve · Scale · Smile</div>
 
       {}
       <section id="about" className="scroll-mt-20 relative overflow-hidden bg-background">
@@ -398,7 +402,7 @@ const Index = () => {
             <AnimatedSection delay={0.15}>
               <div className="relative h-[480px] lg:h-full lg:min-h-[680px] overflow-hidden">
                 <img
-                  src={aboutRightImage}
+                  src={getImgSrc(aboutRightImage)}
                   alt="Team collaboration at Klaun"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
@@ -473,14 +477,11 @@ const Index = () => {
 
               {}
               <div className="flex flex-wrap items-center gap-2">
-                {["Brand", "Creator", "Platform", "Performance", "Revenue"].map((step, i, arr) => (
+                {["Brand", "Creator", "Platform", "Performance", "Revenue"].map((step) => (
                   <div key={step} className="flex items-center gap-2">
                     <span className="px-3 py-1.5 rounded-lg bg-white/8 border border-white/15 text-white/80 text-xs font-semibold">
                       {step}
                     </span>
-                    {i < arr.length - 1 && (
-                      <span className="text-primary text-xs font-bold">?</span>
-                    )}
                   </div>
                 ))}
               </div>
@@ -491,7 +492,7 @@ const Index = () => {
               <div className="relative flex items-center justify-center">
                 {}
                 <img
-                  src={robotCircle}
+                  src={getImgSrc(robotCircle)}
                   alt=""
                   aria-hidden="true"
                   className="absolute w-[340px] sm:w-[400px] lg:w-[460px] opacity-70 spin-slow ring-red pointer-events-none"
@@ -499,7 +500,7 @@ const Index = () => {
 
                 {}
                 <img
-                  src={whyKlaunRobot}
+                  src={getImgSrc(whyKlaunRobot)}
                   alt="Klaun AI assistant"
                   className="relative z-10 max-h-[400px] lg:max-h-[460px] w-auto object-contain drop-shadow-2xl"
                 />
@@ -547,7 +548,7 @@ const Index = () => {
                 Our Direction
               </div>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-                Where We're Going & How We Get There
+                Where We&apos;re Going & How We Get There
               </h2>
             </div>
           </AnimatedSection>
@@ -574,7 +575,7 @@ const Index = () => {
                   </div>
 
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-secondary-foreground mb-4 leading-snug">
-                    The World's Most Trusted Growth Infrastructure
+                    The World&apos;s Most Trusted Growth Infrastructure
                   </h3>
                   <p className="text-secondary-foreground/65 text-sm leading-relaxed flex-1">
                     Where every brand, creator, and platform scales through verified, intelligent systems ? with zero guesswork.
@@ -606,7 +607,7 @@ const Index = () => {
                   </div>
 
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-4 leading-snug">
-                    Solve ? Serve ? Scale ? Smile
+                    Solve · Serve · Scale · Smile
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed flex-1">
                     Diagnose, architect, activate, and compound sustainable revenue for every partner ? from first signal to lifecycle growth.
@@ -716,8 +717,8 @@ const Index = () => {
           aria-hidden="true"
           className="pointer-events-none select-none absolute left-0 top-0 w-[260px] sm:w-[320px] md:w-[380px] h-[180px] sm:h-[220px] md:h-[260px] opacity-15 bg-primary"
           style={{
-            maskImage: `url(${topLeftWave})`,
-            WebkitMaskImage: `url(${topLeftWave})`,
+            maskImage: `url(${getImgSrc(topLeftWave)})`,
+            WebkitMaskImage: `url(${getImgSrc(topLeftWave)})`,
             maskRepeat: "no-repeat",
             WebkitMaskRepeat: "no-repeat",
             maskSize: "contain",
@@ -730,8 +731,8 @@ const Index = () => {
           aria-hidden="true"
           className="pointer-events-none select-none absolute right-0 top-0 w-[260px] sm:w-[320px] md:w-[380px] h-[180px] sm:h-[220px] md:h-[260px] opacity-15 bg-primary scale-x-[-1]"
           style={{
-            maskImage: `url(${topLeftWave})`,
-            WebkitMaskImage: `url(${topLeftWave})`,
+            maskImage: `url(${getImgSrc(topLeftWave)})`,
+            WebkitMaskImage: `url(${getImgSrc(topLeftWave)})`,
             maskRepeat: "no-repeat",
             WebkitMaskRepeat: "no-repeat",
             maskSize: "contain",
@@ -844,7 +845,7 @@ const Index = () => {
                   <div className="relative h-48 overflow-hidden bg-secondary">
                     {section.image && (
                       <img
-                        src={section.image}
+                        src={getImgSrc(section.image)}
                         alt={section.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
@@ -887,7 +888,7 @@ const Index = () => {
                     <div className="relative sm:w-52 lg:w-64 h-48 sm:h-auto overflow-hidden bg-secondary shrink-0">
                       {section.image && (
                         <img
-                          src={section.image}
+                          src={getImgSrc(section.image)}
                           alt={section.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
@@ -935,7 +936,7 @@ const Index = () => {
           <AnimatedSection>
             <div className="relative rounded-2xl overflow-hidden mb-12 w-full min-h-[200px] sm:min-h-[240px]">
               <img
-                src={growthSolutionsBanner}
+                src={getImgSrc(growthSolutionsBanner)}
                 alt="Growth solutions"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -1044,8 +1045,8 @@ const Index = () => {
           aria-hidden="true"
           className="pointer-events-none select-none absolute left-0 top-0 w-[220px] sm:w-[280px] md:w-[320px] h-[150px] sm:h-[190px] md:h-[210px] opacity-10 bg-primary"
           style={{
-            maskImage: `url(${topLeftWave})`,
-            WebkitMaskImage: `url(${topLeftWave})`,
+            maskImage: `url(${getImgSrc(topLeftWave)})`,
+            WebkitMaskImage: `url(${getImgSrc(topLeftWave)})`,
             maskRepeat: "no-repeat",
             WebkitMaskRepeat: "no-repeat",
             maskSize: "contain",
@@ -1058,8 +1059,8 @@ const Index = () => {
           aria-hidden="true"
           className="pointer-events-none select-none absolute right-0 top-0 w-[220px] sm:w-[280px] md:w-[320px] h-[150px] sm:h-[190px] md:h-[210px] opacity-10 bg-primary scale-x-[-1]"
           style={{
-            maskImage: `url(${topLeftWave})`,
-            WebkitMaskImage: `url(${topLeftWave})`,
+            maskImage: `url(${getImgSrc(topLeftWave)})`,
+            WebkitMaskImage: `url(${getImgSrc(topLeftWave)})`,
             maskRepeat: "no-repeat",
             WebkitMaskRepeat: "no-repeat",
             maskSize: "contain",
@@ -1095,7 +1096,7 @@ const Index = () => {
                   <div className="relative h-52 overflow-hidden bg-secondary/80">
                     {"image" in item && item.image ? (
                       <img
-                        src={item.image}
+                        src={getImgSrc(item.image)}
                         alt={item.label}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 brightness-75 group-hover:brightness-90"
                       />
@@ -1320,7 +1321,7 @@ const Index = () => {
                       {}
                       <div className="relative h-[260px] overflow-hidden bg-secondary shrink-0">
                         {"image" in leader && leader.image ? (
-                          <img src={leader.image} alt={leader.name}
+                          <img src={getImgSrc(leader.image)} alt={leader.name}
                             className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-105"
                           />
                         ) : (
@@ -1359,9 +1360,9 @@ const Index = () => {
                             className="mt-2 flex items-center gap-1.5 text-primary text-xs font-bold hover:text-primary/80 transition-colors duration-200"
                           >
                             {isExpanded ? (
-                              <>Show Less <span className="text-[10px]">?</span></>
+                              <>Show Less</>
                             ) : (
-                              <>Read More <span className="text-[10px]">?</span></>
+                              <>Read More</>
                             )}
                           </button>
                         </div>
@@ -1429,7 +1430,7 @@ const Index = () => {
                         <div className="relative shrink-0">
                           <div className="w-[76px] h-[76px] rounded-2xl overflow-hidden ring-2 ring-white/8 group-hover:ring-primary/40 transition-all duration-300 shadow-xl shadow-black/30">
                             {"image" in mentor && mentor.image ? (
-                              <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-400" />
+                              <img src={getImgSrc(mentor.image)} alt={mentor.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-400" />
                             ) : (
                               <div className="w-full h-full bg-primary/15 flex items-center justify-center">
                                 <span className="font-heading font-bold text-primary text-2xl">{mentor.name.split(" ").map((n) => n[0]).join("")}</span>
@@ -1459,7 +1460,7 @@ const Index = () => {
                             onClick={() => setExpandedMentor(isExpanded ? null : mentor.name)}
                             className="mt-2 flex items-center gap-1.5 text-primary text-xs font-bold hover:text-primary/80 transition-colors duration-200"
                           >
-                            {isExpanded ? <>Show Less <span className="text-[10px]">?</span></> : <>Read More <span className="text-[10px]">?</span></>}
+                            {isExpanded ? <>Show Less</> : <>Read More</>}
                           </button>
                         </div>
 
@@ -1530,7 +1531,7 @@ const Index = () => {
                     >
                       <div className="absolute top-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                       <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md shadow-black/10 group-hover:scale-110 group-hover:shadow-primary/20 transition-all duration-300" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
-                        <img src={brand.image} alt={brand.label} className="max-h-10 max-w-[44px] object-contain" />
+                        <img src={getImgSrc(brand.image)} alt={brand.label} className="max-h-10 max-w-[44px] object-contain" />
                       </div>
                       <div className="text-center">
                         <p className="font-heading font-black text-foreground text-sm group-hover:text-primary transition-colors duration-300">{brand.label}</p>
@@ -1560,7 +1561,7 @@ const Index = () => {
                       <div className="absolute top-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                       <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform duration-300" style={{ background: "hsl(0,0%,95%)", border: "1px solid rgba(0,0,0,0.06)" }}>
                         {brand.image ? (
-                          <img src={brand.image} alt={brand.label} className="max-h-9 max-w-[40px] object-contain" />
+                          <img src={getImgSrc(brand.image)} alt={brand.label} className="max-h-9 max-w-[40px] object-contain" />
                         ) : (
                           brand.emoji
                         )}
@@ -1612,7 +1613,7 @@ const Index = () => {
 
         {}
         <div className="absolute left-0 top-0 bottom-0 w-full lg:w-[48%] overflow-hidden">
-          <img src={contactImage} alt="Klaun team" className="w-full h-full object-cover object-center" />
+          <img src={getImgSrc(contactImage)} alt="Klaun team" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-white lg:to-white/0" />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-secondary/90 lg:hidden" />
           {}

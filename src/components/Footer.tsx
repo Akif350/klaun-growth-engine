@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import youtubeLogo from "@/assets/youtube-logo.png";
@@ -16,7 +18,7 @@ const solutionsColumn2 = [
 ];
 
 const Footer = () => {
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -185,7 +187,7 @@ const Footer = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
                 <div className="w-9 h-9 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/40 transition-all duration-300">
-                  <img src={gmailLogo} alt="Gmail" className="w-4 h-4 object-contain" />
+                  <img src={typeof gmailLogo === "string" ? gmailLogo : gmailLogo.src} alt="Gmail" className="w-4 h-4 object-contain" />
                 </div>
                 <div className="min-w-0">
                   <p className="text-[9px] text-white/25 uppercase tracking-[0.2em] font-bold mb-0.5">Email Us</p>
@@ -229,7 +231,7 @@ const Footer = () => {
                     aria-label={s.label}
                     className="w-11 h-11 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-1 transition-all duration-300"
                   >
-                    <img src={s.img} alt={s.label} className="w-5 h-5 object-contain" />
+                    <img src={typeof s.img === "string" ? s.img : s.img.src} alt={s.label} className="w-5 h-5 object-contain" />
                   </a>
                 ))}
               </div>

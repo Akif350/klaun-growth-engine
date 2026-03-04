@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 const fullText = "Global Growth Intelligence & Verified Ecosystem Infrastructure";
